@@ -1,0 +1,447 @@
+<!doctype html><html lang=vi class="js csstransforms3d">
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=generator content="Hugo 0.92.2">
+<meta name=description content>
+<meta name=author content="journeyoftheaverageguy@gmail.com">
+<link rel=icon href=../../images/favicon.png type=image/png>
+<title>Sử dụng AWS SDK for Java để điều khiển AWS :: AWS System Manager</title>
+<link href=../../css/nucleus.css?1754928610 rel=stylesheet>
+<link href=../../css/fontawesome-all.min.css?1754928610 rel=stylesheet>
+<link href=../../css/hybrid.css?1754928610 rel=stylesheet>
+<link href=../../css/featherlight.min.css?1754928610 rel=stylesheet>
+<link href=../../css/perfect-scrollbar.min.css?1754928610 rel=stylesheet>
+<link href=../../css/auto-complete.css?1754928610 rel=stylesheet>
+<link href=../../css/atom-one-dark-reasonable.css?1754928610 rel=stylesheet>
+<link href=../../css/theme.css?1754928610 rel=stylesheet>
+<link href=../../css/hugo-theme.css?1754928610 rel=stylesheet>
+<link href=../../css/theme-workshop.css?1754928610 rel=stylesheet>
+<script src=../../js/jquery-3.3.1.min.js?1754928610></script>
+<style>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
+</head>
+<body data-url=../../vi/5-java-sdk/>
+<nav id=sidebar class=showVisitedLinks>
+<div id=header-wrapper>
+<div id=header>
+<a id=logo href=../../><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff}.cls-2{fill:#f90;fill-rule:evenodd}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09 10.85a4.7 4.7.0 00.19 1.48 7.73 7.73.0 00.54 1.19.77.77.0 01.12.38.64.64.0 01-.32.49l-1 .7a.83.83.0 01-.44.15.69.69.0 01-.49-.23 3.8 3.8.0 01-.6-.77q-.25-.42-.51-1a6.14 6.14.0 01-4.89 2.3 4.54 4.54.0 01-3.32-1.19 4.27 4.27.0 01-1.22-3.2 4.28 4.28.0 011.46-3.4A6.06 6.06.0 017.69 6.46a12.47 12.47.0 011.76.13q.92.13 1.91.36V5.73a3.65 3.65.0 00-.79-2.66A3.81 3.81.0 007.86 2.3a7.71 7.71.0 00-1.79.22 12.78 12.78.0 00-1.79.57 4.55 4.55.0 01-.58.22h-.26q-.35.0-.35-.52V2a1.09 1.09.0 01.12-.58 1.2 1.2.0 01.47-.35A10.88 10.88.0 015.77.32 10.19 10.19.0 018.36.0a6 6 0 014.35 1.35 5.49 5.49.0 011.38 4.09zM7.34 13.38a5.36 5.36.0 001.72-.31A3.63 3.63.0 0010.63 12 2.62 2.62.0 0011.19 11a5.63 5.63.0 00.16-1.44v-.7a14.35 14.35.0 00-1.53-.28 12.37 12.37.0 00-1.56-.1 3.84 3.84.0 00-2.47.67A2.34 2.34.0 005 11a2.35 2.35.0 00.61 1.76A2.4 2.4.0 007.34 13.38zm13.35 1.8a1 1 0 01-.64-.16 1.3 1.3.0 01-.35-.65L15.81 1.51a3 3 0 01-.15-.67.36.36.0 01.41-.41H17.7a1 1 0 01.65.16 1.4 1.4.0 01.33.65l2.79 11 2.59-11A1.17 1.17.0 0124.39.6a1.1 1.1.0 01.67-.16H26.4a1.1 1.1.0 01.67.16 1.17 1.17.0 01.32.65L30 12.39 32.88 1.25A1.39 1.39.0 0133.22.6a1 1 0 01.65-.16h1.54a.36.36.0 01.41.41 1.36 1.36.0 010 .26 3.64 3.64.0 01-.12.41l-4 12.86a1.3 1.3.0 01-.35.65 1 1 0 01-.64.16H29.25a1 1 0 01-.67-.17 1.26 1.26.0 01-.32-.67L25.67 3.64l-2.56 10.7a1.26 1.26.0 01-.32.67 1 1 0 01-.67.17zm21.36.44a11.28 11.28.0 01-2.56-.29 7.44 7.44.0 01-1.92-.67 1 1 0 01-.61-.93v-.84q0-.52.38-.52a.9.9.0 01.31.06l.42.17a8.77 8.77.0 001.83.58 9.78 9.78.0 002 .2 4.48 4.48.0 002.43-.55 1.76 1.76.0 00.86-1.57 1.61 1.61.0 00-.45-1.16A4.29 4.29.0 0043 9.22l-2.41-.76A5.15 5.15.0 0138 6.78a3.94 3.94.0 01-.83-2.41 3.7 3.7.0 01.45-1.85 4.47 4.47.0 011.19-1.37 5.27 5.27.0 011.7-.86A7.4 7.4.0 0142.6.0a8.87 8.87.0 011.12.07q.57.07 1.08.19t.95.26a4.27 4.27.0 01.7.29 1.59 1.59.0 01.49.41.94.94.0 01.15.55v.79q0 .52-.38.52a1.76 1.76.0 01-.64-.2 7.74 7.74.0 00-3.2-.64 4.37 4.37.0 00-2.21.47 1.6 1.6.0 00-.79 1.48 1.58 1.58.0 00.49 1.18 4.94 4.94.0 001.83.92L44.55 7a5.08 5.08.0 012.57 1.6A3.76 3.76.0 0147.9 11a4.21 4.21.0 01-.44 1.93 4.4 4.4.0 01-1.21 1.47 5.43 5.43.0 01-1.85.93A8.25 8.25.0 0142.05 15.62z"/><path class="cls-2" d="M45.19 23.81C39.72 27.85 31.78 30 25 30A36.64 36.64.0 01.22 20.57c-.51-.46-.06-1.09.56-.74A49.78 49.78.0 0025.53 26.4 49.23 49.23.0 0044.4 22.53C45.32 22.14 46.1 23.14 45.19 23.81z"/><path class="cls-2" d="M47.47 21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74 3.13-2.2 8.27-1.57 8.86-.83s-.16 5.89-3.09 8.35c-.45.38-.88.18-.68-.32C46.69 25.8 48.17 22.11 47.47 21.21z"/></svg>
+</a>
+</div>
+<div class=searchbox>
+<label for=search-by><i class="fas fa-search"></i></label>
+<input data-search-input id=search-by type=search placeholder=Search...>
+<span data-search-clear><i class="fas fa-times"></i></span>
+</div>
+<script type=text/javascript src=../../js/lunr.min.js?1754928610></script>
+<script type=text/javascript src=../../js/auto-complete.js?1754928610></script>
+<script type=text/javascript>var baseurl="https://QuocTrong21.github.io/FCJ-Workshop//vi"</script>
+<script type=text/javascript src=../../js/search.js?1754928610></script>
+</div>
+<div class=highlightable>
+<ul class=topics>
+<li data-nav-id=/vi/1-introduce/ title="Giới thiệu" class=dd-item>
+<a href=../../vi/1-introduce/>
+<b> 1. </b> Giới thiệu
+<i class="fas fa-check read-icon"></i>
+</a>
+</li>
+<li data-nav-id=/vi/2-prerequiste/ title="Các bước Chuẩn bị Môi trường cho Network Automation trên AWS" class=dd-item>
+<a href=../../vi/2-prerequiste/>
+<b> 2. </b> Các bước Chuẩn bị Môi trường cho Network Automation trên AWS
+<i class="fas fa-check read-icon"></i>
+</a>
+<ul>
+<li data-nav-id=/vi/2-prerequiste/2.1.1-createiam/ title="Tạo IAM User và lấy Access Key, Secret Access Key, Public Key" class=dd-item>
+<a href=../../vi/2-prerequiste/2.1.1-createiam/>
+<b> 2.1.1 </b> Tạo IAM User và lấy Access Key, Secret Access Key, Public Key
+<i class="fas fa-check read-icon"></i>
+</a>
+</li>
+<li data-nav-id=/vi/2-prerequiste/2.1.2-createec2/ title=" Hướng Dẫn Tạo EC2 Instance Trên AWS" class=dd-item>
+<a href=../../vi/2-prerequiste/2.1.2-createec2/>
+<b> 2.1.2 </b> Hướng Dẫn Tạo EC2 Instance Trên AWS
+<i class="fas fa-check read-icon"></i>
+</a>
+</li>
+</ul>
+</li>
+<li data-nav-id=/vi/3-awscli/ title="Tự động hóa bằng AWS CLI" class=dd-item>
+<a href=../../vi/3-awscli/>
+<b> 3. </b> Tự động hóa bằng AWS CLI
+<i class="fas fa-check read-icon"></i>
+</a>
+</li>
+<li data-nav-id=/vi/4-cloudformation/ title="Triển khai Mạng AWS bằng CloudFormation (IaC)" class=dd-item>
+<a href=../../vi/4-cloudformation/>
+<b> 4. </b> Triển khai Mạng AWS bằng CloudFormation (IaC)
+<i class="fas fa-check read-icon"></i>
+</a>
+</li>
+<li data-nav-id=/vi/5-java-sdk/ title="Sử dụng AWS SDK for Java để điều khiển AWS" class="dd-item
+parent
+active">
+<a href=../../vi/5-java-sdk/>
+<b> 5. </b> Sử dụng AWS SDK for Java để điều khiển AWS
+<i class="fas fa-check read-icon"></i>
+</a>
+</li>
+<li data-nav-id=/vi/6-cleanup/ title="Dọn Dẹp tài Nguyên" class=dd-item>
+<a href=../../vi/6-cleanup/>
+<b> 6. </b> Dọn Dẹp tài Nguyên
+<i class="fas fa-check read-icon"></i>
+</a>
+</li>
+</ul>
+<section id=shortcuts>
+<h3>More</h3>
+<ul>
+<li>
+<a class=padding href=https://www.facebook.com/groups/awsstudygroupfcj/><i class="fab fa-facebook"></i> AWS Study Group</a>
+</li>
+</ul>
+</section>
+<section id=prefooter>
+<hr>
+<ul>
+<li>
+<a class=padding>
+<i class="fas fa-language fa-fw"></i>
+<div class=select-style>
+<select id=select-language onchange="location=this.value"><option id=en value=https://QuocTrong21.github.io/FCJ-Workshop/5-java-sdk/>English</option><option id=vi value=https://QuocTrong21.github.io/FCJ-Workshop/vi/5-java-sdk/ selected>Tiếng Việt</option></select><svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="255" height="255" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255"><g><g id="arrow-drop-down"><polygon points="0,63.75 127.5,191.25 255,63.75"/></g></g></svg>
+</div>
+</a>
+</li>
+<li><a class=padding href=# data-clear-history-toggle><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+</ul>
+</section>
+<section id=footer>
+<left>
+<b> Workshop</b> <br>
+<img src="https://hitwebcounter.com/counter/counter.php?page=7920860&style=0038&nbdigits=9&type=page&initCount=0" title=Migrate alt="web counter" border=0></a> <br>
+<b> <a href=https://cloudjourney.awsstudygroup.com/>Cloud Journey</a></b> <br>
+<img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" alt="web counter" border=0>
+</left>
+<left>
+<br>
+<br>
+<b> Last Updated </b> <br>
+<i><font color=orange>30-01-2022</font></i>
+</left>
+<left>
+<br>
+<br>
+<b> Team </b> <br>
+<i> <a href=https://www.linkedin.com/in/sutrinh/ style=color:orange>Sử Trịnh </a> <br>
+<a href=https://www.linkedin.com/in/jotaguy style=color:orange>Gia Hưng </a> <br>
+<a href=https://www.linkedin.com/in/hiepnguyendt style=color:orange>Thanh Hiệp </a>
+</i>
+</left>
+<script async defer src=https://buttons.github.io/buttons.js></script>
+</section>
+</div>
+</nav>
+<section id=body>
+<div id=overlay></div>
+<div class="padding highlightable">
+<div>
+<div id=top-bar>
+<div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb>
+<span id=sidebar-toggle-span>
+<a href=# id=sidebar-toggle data-sidebar-toggle>
+<i class="fas fa-bars"></i>
+</a>
+</span>
+<span id=toc-menu><i class="fas fa-list-alt"></i></span>
+<span class=links>
+<a href=../../vi/>Tổng quan – Network Automation với AWS CLI, AWS SDK (Java), CloudFormation</a> > Sử dụng AWS SDK for Java để điều khiển AWS
+</span>
+</div>
+<div class=progress>
+<div class=wrapper>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#5-sử-dụng-aws-sdk-for-java>5. Sử dụng AWS SDK for Java</a>
+<ul>
+<li><a href=#41-mục-tiêu>4.1. Mục tiêu</a></li>
+<li><a href=#42-cấu-trúc-project>4.2. Cấu trúc Project</a></li>
+<li><a href=#43-các-bước-thực-hiện>4.3. Các bước thực hiện</a></li>
+<li><a href=#khởi-tạo-maven-project>Khởi tạo Maven project.</a></li>
+<li><a href=#44-kết-quả>4.4. Kết quả</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id=head-tags>
+</div>
+<div id=body-inner>
+<h1>
+Sử dụng AWS SDK for Java để điều khiển AWS
+</h1>
+<h2 id=5-sử-dụng-aws-sdk-for-java>5. Sử dụng AWS SDK for Java</h2>
+<h3 id=41-mục-tiêu>4.1. Mục tiêu</h3>
+<ul>
+<li>Viết mã Java để tự động điều khiển các tài nguyên AWS như tạo Security Group, thiết lập CloudWatch Alarm, và gửi thông báo SNS.</li>
+<li>Tăng cường tự động hóa và giám sát hệ thống AWS bằng ứng dụng Java.</li>
+</ul>
+<hr>
+<h3 id=42-cấu-trúc-project>4.2. Cấu trúc Project</h3>
+<ul>
+<li>Tạo project Maven sử dụng AWS SDK for Java (phiên bản 2.x).</li>
+<li>Thêm các dependency cần thiết bao gồm:
+<ul>
+<li>EC2 client để quản lý Security Group.</li>
+<li>CloudWatch client để tạo và quản lý Alarm.</li>
+<li>SNS client để gửi thông báo khi Alarm được kích hoạt.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id=43-các-bước-thực-hiện>4.3. Các bước thực hiện</h3>
+<ol>
+<li>
+<p><strong>Setup project và AWS SDK</strong></p>
+<h3 id=khởi-tạo-maven-project>Khởi tạo Maven project.</h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>   &lt;project xmlns<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;http://maven.apache.org/POM/4.0.0&#34;</span> 
+           xmlns:xsi<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+           xsi:schemaLocation<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;http://maven.apache.org/POM/4.0.0 
+</span><span style=color:#e6db74>                               http://maven.apache.org/maven-v4_0_0.xsd&#34;</span>&gt;
+       &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+       &lt;groupId&gt;com.movie.aws&lt;/groupId&gt;
+       &lt;artifactId&gt;aws-networking&lt;/artifactId&gt;
+       &lt;version&gt;1.0&lt;/version&gt;
+
+       &lt;dependencyManagement&gt;
+           &lt;dependencies&gt;
+               &lt;dependency&gt;
+                   &lt;groupId&gt;software.amazon.awssdk&lt;/groupId&gt;
+                   &lt;artifactId&gt;bom&lt;/artifactId&gt;
+                   &lt;version&gt;2.25.24&lt;/version&gt;
+                   &lt;type&gt;pom&lt;/type&gt;
+                   &lt;scope&gt;import&lt;/scope&gt;
+               &lt;/dependency&gt;
+           &lt;/dependencies&gt;
+       &lt;/dependencyManagement&gt;
+
+       &lt;dependencies&gt;
+           &lt;dependency&gt;
+               &lt;groupId&gt;software.amazon.awssdk&lt;/groupId&gt;
+               &lt;artifactId&gt;ec2&lt;/artifactId&gt;
+           &lt;/dependency&gt;
+           &lt;dependency&gt;
+               &lt;groupId&gt;software.amazon.awssdk&lt;/groupId&gt;
+               &lt;artifactId&gt;cloudwatch&lt;/artifactId&gt;
+           &lt;/dependency&gt;
+           &lt;dependency&gt;
+               &lt;groupId&gt;software.amazon.awssdk&lt;/groupId&gt;
+               &lt;artifactId&gt;sns&lt;/artifactId&gt;
+           &lt;/dependency&gt;
+       &lt;/dependencies&gt;
+       &lt;build&gt;
+       &lt;plugins&gt;
+           &lt;plugin&gt;
+               &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+               &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+               &lt;version&gt;3.8.1&lt;/version&gt;
+               &lt;configuration&gt;
+                   &lt;source&gt;17&lt;/source&gt;
+                   &lt;target&gt;17&lt;/target&gt;
+               &lt;/configuration&gt;
+           &lt;/plugin&gt;
+       &lt;/plugins&gt;
+       &lt;/build&gt;
+   &lt;/project&gt;
+
+</code></pre></div><p><img src=../../images/5.sdk/5.1.png alt=SDK>
+<img src=../../images/5.sdk/5.2.png alt=SDK></p>
+<ul>
+<li>Thêm dependency AWS SDK.</li>
+<li>Cấu hình thông tin đăng nhập AWS (AWS credentials).</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>   package com.movie.aws;
+   import software.amazon.awssdk.services.ec2.Ec2Client;
+   import software.amazon.awssdk.services.ec2.model.*;
+   import software.amazon.awssdk.services.sns.SnsClient;
+   import software.amazon.awssdk.services.sns.model.*;
+   import software.amazon.awssdk.services.cloudwatch.CloudWatchClient;
+   import software.amazon.awssdk.services.cloudwatch.model.*;
+   import java.util.Scanner;
+
+ public class NetworkAutomationAllInOne <span style=color:#f92672>{</span>
+
+   public static void main<span style=color:#f92672>(</span>String<span style=color:#f92672>[]</span> args<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+       Scanner sc <span style=color:#f92672>=</span> new Scanner<span style=color:#f92672>(</span>System.in<span style=color:#f92672>)</span>;
+
+       System.out.print<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;Nhập VPC ID: &#34;</span><span style=color:#f92672>)</span>;
+       String vpcId <span style=color:#f92672>=</span> sc.nextLine<span style=color:#f92672>()</span>;
+
+       System.out.print<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;Nhập EC2 Instance ID để gắn alarm: &#34;</span><span style=color:#f92672>)</span>;
+       String instanceId <span style=color:#f92672>=</span> sc.nextLine<span style=color:#f92672>()</span>;
+
+       System.out.print<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;Nhập email nhận cảnh báo SNS: &#34;</span><span style=color:#f92672>)</span>;
+       String email <span style=color:#f92672>=</span> sc.nextLine<span style=color:#f92672>()</span>;
+
+       try <span style=color:#f92672>(</span>Ec2Client ec2 <span style=color:#f92672>=</span> Ec2Client.create<span style=color:#f92672>()</span>;
+           SnsClient sns <span style=color:#f92672>=</span> SnsClient.create<span style=color:#f92672>()</span>;
+           CloudWatchClient cloudWatch <span style=color:#f92672>=</span> CloudWatchClient.create<span style=color:#f92672>())</span> <span style=color:#f92672>{</span>
+
+           String sgId <span style=color:#f92672>=</span> createSecurityGroup<span style=color:#f92672>(</span>ec2, vpcId<span style=color:#f92672>)</span>;
+           System.out.println<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;Security Group ID: &#34;</span> + sgId<span style=color:#f92672>)</span>;
+
+           String topicArn <span style=color:#f92672>=</span> createSnsTopic<span style=color:#f92672>(</span>sns, email<span style=color:#f92672>)</span>;
+           System.out.println<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;SNS Topic ARN: &#34;</span> + topicArn<span style=color:#f92672>)</span>;
+           System.out.println<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;Vui lòng xác nhận email trước khi alarm hoạt động.&#34;</span><span style=color:#f92672>)</span>;
+
+           createCloudWatchAlarm<span style=color:#f92672>(</span>cloudWatch, instanceId, topicArn<span style=color:#f92672>)</span>;
+           System.out.println<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;Hoàn tất! Hạ tầng mạng + giám sát đã được cấu hình.&#34;</span><span style=color:#f92672>)</span>;
+       <span style=color:#f92672>}</span>
+   <span style=color:#f92672>}</span>
+
+   private static String createSecurityGroup<span style=color:#f92672>(</span>Ec2Client ec2, String vpcId<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+       CreateSecurityGroupResponse sgResponse <span style=color:#f92672>=</span> ec2.createSecurityGroup<span style=color:#f92672>(</span>
+               CreateSecurityGroupRequest.builder<span style=color:#f92672>()</span>
+                       .groupName<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;MovieWebSG&#34;</span><span style=color:#f92672>)</span>
+                       .description<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;SG for Movie Web Java App&#34;</span><span style=color:#f92672>)</span>
+                       .vpcId<span style=color:#f92672>(</span>vpcId<span style=color:#f92672>)</span>
+                       .build<span style=color:#f92672>()</span>
+       <span style=color:#f92672>)</span>;
+       String sgId <span style=color:#f92672>=</span> sgResponse.groupId<span style=color:#f92672>()</span>;
+
+       ec2.authorizeSecurityGroupIngress<span style=color:#f92672>(</span>AuthorizeSecurityGroupIngressRequest.builder<span style=color:#f92672>()</span>
+               .groupId<span style=color:#f92672>(</span>sgId<span style=color:#f92672>)</span>
+               .ipPermissions<span style=color:#f92672>(</span>
+                       IpPermission.builder<span style=color:#f92672>()</span>.ipProtocol<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;tcp&#34;</span><span style=color:#f92672>)</span>.fromPort<span style=color:#f92672>(</span>22<span style=color:#f92672>)</span>.toPort<span style=color:#f92672>(</span>22<span style=color:#f92672>)</span>
+                               .ipRanges<span style=color:#f92672>(</span>IpRange.builder<span style=color:#f92672>()</span>.cidrIp<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;0.0.0.0/0&#34;</span><span style=color:#f92672>)</span>.build<span style=color:#f92672>())</span>.build<span style=color:#f92672>()</span>,
+                       IpPermission.builder<span style=color:#f92672>()</span>.ipProtocol<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;tcp&#34;</span><span style=color:#f92672>)</span>.fromPort<span style=color:#f92672>(</span>80<span style=color:#f92672>)</span>.toPort<span style=color:#f92672>(</span>80<span style=color:#f92672>)</span>
+                               .ipRanges<span style=color:#f92672>(</span>IpRange.builder<span style=color:#f92672>()</span>.cidrIp<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;0.0.0.0/0&#34;</span><span style=color:#f92672>)</span>.build<span style=color:#f92672>())</span>.build<span style=color:#f92672>()</span>,
+                       IpPermission.builder<span style=color:#f92672>()</span>.ipProtocol<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;tcp&#34;</span><span style=color:#f92672>)</span>.fromPort<span style=color:#f92672>(</span>443<span style=color:#f92672>)</span>.toPort<span style=color:#f92672>(</span>443<span style=color:#f92672>)</span>
+                               .ipRanges<span style=color:#f92672>(</span>IpRange.builder<span style=color:#f92672>()</span>.cidrIp<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;0.0.0.0/0&#34;</span><span style=color:#f92672>)</span>.build<span style=color:#f92672>())</span>.build<span style=color:#f92672>()</span>,
+                       IpPermission.builder<span style=color:#f92672>()</span>.ipProtocol<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;tcp&#34;</span><span style=color:#f92672>)</span>.fromPort<span style=color:#f92672>(</span>3306<span style=color:#f92672>)</span>.toPort<span style=color:#f92672>(</span>3306<span style=color:#f92672>)</span>
+                               .ipRanges<span style=color:#f92672>(</span>IpRange.builder<span style=color:#f92672>()</span>.cidrIp<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;10.0.0.0/16&#34;</span><span style=color:#f92672>)</span>.build<span style=color:#f92672>())</span>.build<span style=color:#f92672>()</span>
+               <span style=color:#f92672>)</span>
+               .build<span style=color:#f92672>())</span>;
+
+       <span style=color:#66d9ef>return</span> sgId;
+   <span style=color:#f92672>}</span>
+
+   private static String createSnsTopic<span style=color:#f92672>(</span>SnsClient sns, String email<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+       CreateTopicResponse topicResponse <span style=color:#f92672>=</span> sns.createTopic<span style=color:#f92672>(</span>
+               CreateTopicRequest.builder<span style=color:#f92672>()</span>.name<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;HighCPUAlert&#34;</span><span style=color:#f92672>)</span>.build<span style=color:#f92672>()</span>
+       <span style=color:#f92672>)</span>;
+       String topicArn <span style=color:#f92672>=</span> topicResponse.topicArn<span style=color:#f92672>()</span>;
+
+       sns.subscribe<span style=color:#f92672>(</span>SubscribeRequest.builder<span style=color:#f92672>()</span>
+               .protocol<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;email&#34;</span><span style=color:#f92672>)</span>
+               .endpoint<span style=color:#f92672>(</span>email<span style=color:#f92672>)</span>
+               .topicArn<span style=color:#f92672>(</span>topicArn<span style=color:#f92672>)</span>
+               .build<span style=color:#f92672>())</span>;
+
+       <span style=color:#66d9ef>return</span> topicArn;
+   <span style=color:#f92672>}</span>
+
+   private static void createCloudWatchAlarm<span style=color:#f92672>(</span>CloudWatchClient cloudWatch, String instanceId, String topicArn<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+       PutMetricAlarmRequest alarmRequest <span style=color:#f92672>=</span> PutMetricAlarmRequest.builder<span style=color:#f92672>()</span>
+               .alarmName<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;HighCPU&#34;</span><span style=color:#f92672>)</span>
+               .comparisonOperator<span style=color:#f92672>(</span>ComparisonOperator.GREATER_THAN_THRESHOLD<span style=color:#f92672>)</span>
+               .evaluationPeriods<span style=color:#f92672>(</span>1<span style=color:#f92672>)</span>
+               .metricName<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;CPUUtilization&#34;</span><span style=color:#f92672>)</span>
+               .namespace<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;AWS/EC2&#34;</span><span style=color:#f92672>)</span>
+               .period<span style=color:#f92672>(</span>300<span style=color:#f92672>)</span>
+               .statistic<span style=color:#f92672>(</span>Statistic.AVERAGE<span style=color:#f92672>)</span>
+               .threshold<span style=color:#f92672>(</span>70.0<span style=color:#f92672>)</span>
+               .alarmDescription<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;Alarm khi CPU &gt; 70%&#34;</span><span style=color:#f92672>)</span>
+               .dimensions<span style=color:#f92672>(</span>Dimension.builder<span style=color:#f92672>()</span>
+                       .name<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;InstanceId&#34;</span><span style=color:#f92672>)</span>
+                       .value<span style=color:#f92672>(</span>instanceId<span style=color:#f92672>)</span>
+                       .build<span style=color:#f92672>())</span>
+               .actionsEnabled<span style=color:#f92672>(</span>true<span style=color:#f92672>)</span>
+               .alarmActions<span style=color:#f92672>(</span>topicArn<span style=color:#f92672>)</span>
+               .unit<span style=color:#f92672>(</span>StandardUnit.PERCENT<span style=color:#f92672>)</span>
+               .build<span style=color:#f92672>()</span>;
+
+       cloudWatch.putMetricAlarm<span style=color:#f92672>(</span>alarmRequest<span style=color:#f92672>)</span>;
+   <span style=color:#f92672>}</span>
+ <span style=color:#f92672>}</span>
+</code></pre></div><ul>
+<li>Build và chạy Java</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>   mvn clean package
+   java -cp target/aws-networking-1.0.jar com.movie.aws.NetworkAutomationAllInOne
+</code></pre></div><ul>
+<li>Khi chạy, bạn nhập:</li>
+</ul>
+<p>VPC ID (vd: vpc-0a1b2c3d4e5f6g7h)</p>
+<p>EC2 Instance ID để gắn alarm</p>
+<p>Email nhận cảnh báo → AWS SNS sẽ gửi mail confirm → click link trong mail để xác nhận.
+<img src=../../images/5.sdk/5.3.png alt=SDK>
+<img src=../../images/5.sdk/5.4.png alt=SDK>
+<img src=../../images/5.sdk/5.5.png alt=SDK></p>
+</li>
+<li>
+<p><strong>Tạo Security Group</strong></p>
+<ul>
+<li>Sử dụng SDK để tạo Security Group trong VPC.</li>
+<li>Định nghĩa các luật mở cổng (ví dụ SSH, HTTP).
+<img src=../../images/5.sdk/5.6.png alt=SDK></li>
+</ul>
+</li>
+<li>
+<p><strong>Tạo CloudWatch Alarm</strong></p>
+<ul>
+<li>Định nghĩa Alarm giám sát các chỉ số như CPU Utilization của EC2.</li>
+<li>Thiết lập ngưỡng cảnh báo và hành động khi Alarm kích hoạt.
+<img src=../../images/5.sdk/5.7.png alt=SDK>
+<img src=../../images/5.sdk/5.8.png alt=SDK></li>
+</ul>
+</li>
+<li>
+<p><strong>Gửi thông báo qua SNS khi Alarm kích hoạt</strong></p>
+<ul>
+<li>Tạo và cấu hình SNS topic.</li>
+<li>Đăng ký các subscriber (email, SMS, Lambda).</li>
+<li>Liên kết SNS topic với Alarm để gửi thông báo tự động.
+<img src=../../images/5.sdk/5.9.png alt=SDK>
+<img src=../../images/5.sdk/5.10.png alt=SDK></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id=44-kết-quả>4.4. Kết quả</h3>
+<ul>
+<li>Java code có thể tự động tạo và quản lý các tài nguyên mạng và giám sát.</li>
+<li>Tự động gửi cảnh báo khi có sự cố hoặc điều kiện giám sát vượt ngưỡng.</li>
+<li>Tăng hiệu quả vận hành và giảm sai sót thủ công trong quản lý hạ tầng AWS.</li>
+</ul>
+<hr>
+<p>Bạn có muốn hỗ trợ thêm về cách tổ chức project hoặc các best practices khi sử dụng AWS SDK for Java không?</p>
+<footer class=footline>
+</footer>
+</div>
+</div>
+<div id=navigation>
+<a class="nav nav-prev" href=../../vi/4-cloudformation/ title="Triển khai Mạng AWS bằng CloudFormation (IaC)"> <i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-next" href=../../vi/6-cleanup/ title="Dọn Dẹp tài Nguyên" style=margin-right:0><i class="fa fa-chevron-right"></i></a>
+</div>
+</section>
+<div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
+<div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
+</div>
+<script src=../../js/clipboard.min.js?1754928610></script>
+<script src=../../js/perfect-scrollbar.min.js?1754928610></script>
+<script src=../../js/perfect-scrollbar.jquery.min.js?1754928610></script>
+<script src=../../js/jquery.sticky.js?1754928610></script>
+<script src=../../js/featherlight.min.js?1754928610></script>
+<script src=../../js/highlight.pack.js?1754928610></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script src=../../js/modernizr.custom-3.6.0.js?1754928610></script>
+<script src=../../js/learn.js?1754928610></script>
+<script src=../../js/hugo-learn.js?1754928610></script>
+<link href=../../mermaid/mermaid.css?1754928610 rel=stylesheet>
+<script src=../../mermaid/mermaid.js?1754928610></script>
+<script>mermaid.initialize({startOnLoad:!0})</script>
+<script>(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-158079754-2','auto'),ga('send','pageview')</script>
+</body>
+</html>
