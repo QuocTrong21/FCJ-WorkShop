@@ -1,69 +1,43 @@
 ---
-title : "🖥️ Hướng Dẫn Tạo EC2 Instance Trên AWS"
-date :  "`r Sys.Date()`" 
-weight : 1 
-chapter : false
-pre : " <b> 2.1.2 </b> "
+title: "Create IAM User and Obtain Access Key, Secret Access Key, Public Key"
+date: "`r Sys.Date()`"
+weight: 1
+chapter: false
+pre: " <b> 2.1.1 </b> "
 ---
 
+## 1. Create IAM User and Obtain Access Key, Secret Access Key, Public Key
 
-## 📌 Mục Tiêu
-Tạo một EC2 instance sử dụng cấu hình mặc định để triển khai ứng dụng hoặc kiểm thử môi trường.
+To work with AWS CLI, AWS SDK, or CloudFormation, the first step is to create an IAM User with appropriate access permissions and obtain the Access Key and Secret Access Key for configuration.
 
-## 🧰 Yêu Cầu Trước Khi Bắt Đầu
-- Tài khoản AWS hợp lệ
-- Đăng nhập AWS Console hoặc cài sẵn AWS CLI
-- Tạo key pair để SSH (nếu cần)
-c
-## 🛠️ Các Bước Thực Hiện
+---
 
-### 1. Đăng Nhập AWS Console
-Truy cập: [https://console.aws.amazon.com/ec2/](https://console.aws.amazon.com/ec2/)
+### Steps to Perform
 
-### 2. Tạo EC2 Instance
+1. Log in to the AWS Management Console with Admin privileges.  
+2. Navigate to **IAM** > **Users** > **Add user**.  
+3. Enter the user name (e.g., `network-automation-user`).  
+4. Select **Programmatic access** to generate Access Key and Secret Access Key.  
+5. Assign appropriate permissions, for example:  
+   - `AmazonEC2FullAccess`  
+   - `AmazonVPCFullAccess`  
+   - `IAMReadOnlyAccess`  
+   - `AdministratorAccess` (for testing purposes)  
+6. Click **Create user** and download the CSV file containing the Access Key and Secret Access Key.  
+7. Create or import an **EC2 Key Pair** for SSH access (if needed).  
+![VPC](/images/2.prerequisite/2.1.png)  
+![VPC](/images/2.prerequisite/2.2.png)  
 
-#### Cách 1: Qua AWS Console
-1. Vào **EC2 Dashboard**
-2. Nhấn **Launch Instance**
-3. Nhập tên: `workshop`
-4. **Chọn AMI**: `Amazon Linux 2023` (hoặc Amazon Linux 2)
-5. **Loại Instance**: `t2.micro` (Free tier)
-6. **Key pair**: Chọn hoặc tạo mới
-7. **Network Settings**:
-   - Allow SSH (port 22)
-   - Allow HTTP (port 80) nếu cần
-8. **Ổ đĩa**: Mặc định 8 GB (gp2)
-9. Nhấn **Launch Instance**
-![VPC](/images/2.prerequisite/12-1.jpg)
-![VPC](/images/2.prerequisite/12-2.jpg)
-![VPC](/images/2.prerequisite/12-3.jpg)
-![VPC](/images/2.prerequisite/12-4.jpg)
-![VPC](/images/2.prerequisite/12-5.jpg)
-![VPC](/images/2.prerequisite/12-6.jpg)
-![VPC](/images/2.prerequisite/12-7.jpg)
-![VPC](/images/2.prerequisite/12-8.jpg)
-#### Cách 2: Dùng AWS CLI
-```bash
-aws ec2 run-instances   --image-id ami-0c02fb55956c7d316 \ # Amazon Linux 2 (us-east-1)
-  --instance-type t2.micro   --key-name my-key   --security-groups default   --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=MyEC2Default}]'
-```
+### Important Notes
 
-> 📝 Ghi chú: Thay `ami-xxxx` và `my-key` bằng ID và key pair tương ứng trong region của bạn.
+- **Protect your Access Key and Secret Key:** Do not share or expose them publicly.  
+- If the user has broad permissions (AdministratorAccess), use only in testing environments.  
+- Use IAM Roles for EC2 instances whenever possible to avoid using Access Keys directly.
 
-### 3. Kết Nối EC2 Bằng SSH
-```bash
-ssh -i my-key.pem ec2-user@<public-ip>
-```
+---
 
-## ✅ Kết Quả
-- EC2 instance được tạo và chạy trong vài phút.
-- Có thể SSH để cài đặt thêm hoặc triển khai ứng dụng.
-![VPC](/images/2.prerequisite/12-9.jpg)
+### Additional References
 
-## 🧹 Mẹo Quản Lý
-- Tắt hoặc terminate instance sau khi dùng để tránh mất phí.
-- Gắn Elastic IP nếu muốn giữ IP cố định.
-
-## 📚 Tài Liệu Tham Khảo
-- [EC2 User Guide](https://docs.aws.amazon.com/ec2/index.html)
-- [Amazon Linux AMI](https://aws.amazon.com/amazon-linux-ami/)
+- [Guide to Creating IAM User on AWS](https://000002.awsstudygroup.com/en/)  
+- [Managing Access Keys for IAM Users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)  
+- [Key Pairs for Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)  

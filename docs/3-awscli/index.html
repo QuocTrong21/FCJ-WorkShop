@@ -6,18 +6,18 @@
 <meta name=description content>
 <meta name=author content="journeyoftheaverageguy@gmail.com">
 <link rel=icon href=../images/favicon.png type=image/png>
-<title>Connect to EC2 servers :: AWS System Manager</title>
-<link href=../css/nucleus.css?1754929205 rel=stylesheet>
-<link href=../css/fontawesome-all.min.css?1754929205 rel=stylesheet>
-<link href=../css/hybrid.css?1754929205 rel=stylesheet>
-<link href=../css/featherlight.min.css?1754929205 rel=stylesheet>
-<link href=../css/perfect-scrollbar.min.css?1754929205 rel=stylesheet>
-<link href=../css/auto-complete.css?1754929205 rel=stylesheet>
-<link href=../css/atom-one-dark-reasonable.css?1754929205 rel=stylesheet>
-<link href=../css/theme.css?1754929205 rel=stylesheet>
-<link href=../css/hugo-theme.css?1754929205 rel=stylesheet>
-<link href=../css/theme-workshop.css?1754929205 rel=stylesheet>
-<script src=../js/jquery-3.3.1.min.js?1754929205></script>
+<title>Automation with AWS CLI :: AWS System Manager</title>
+<link href=../css/nucleus.css?1754930965 rel=stylesheet>
+<link href=../css/fontawesome-all.min.css?1754930965 rel=stylesheet>
+<link href=../css/hybrid.css?1754930965 rel=stylesheet>
+<link href=../css/featherlight.min.css?1754930965 rel=stylesheet>
+<link href=../css/perfect-scrollbar.min.css?1754930965 rel=stylesheet>
+<link href=../css/auto-complete.css?1754930965 rel=stylesheet>
+<link href=../css/atom-one-dark-reasonable.css?1754930965 rel=stylesheet>
+<link href=../css/theme.css?1754930965 rel=stylesheet>
+<link href=../css/hugo-theme.css?1754930965 rel=stylesheet>
+<link href=../css/theme-workshop.css?1754930965 rel=stylesheet>
+<script src=../js/jquery-3.3.1.min.js?1754930965></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
 </head>
 <body data-url=../3-awscli/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=../js/lunr.min.js?1754929205></script>
-<script type=text/javascript src=../js/auto-complete.js?1754929205></script>
-<script type=text/javascript>var baseurl="https://QuocTrong21.github.io/FCJ-WorkShop/"</script>
-<script type=text/javascript src=../js/search.js?1754929205></script>
+<script type=text/javascript src=../js/lunr.min.js?1754930965></script>
+<script type=text/javascript src=../js/auto-complete.js?1754930965></script>
+<script type=text/javascript>var baseurl="https://QuocTrong21.github.io/FCJ-Workshop/"</script>
+<script type=text/javascript src=../js/search.js?1754930965></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -51,43 +51,43 @@
 <i class="fas fa-check read-icon"></i>
 </a>
 <ul>
-<li data-nav-id=/2-prerequiste/2.1.1-createiam/ title="🖥️ Hướng Dẫn Tạo EC2 Instance Trên AWS" class=dd-item>
+<li data-nav-id=/2-prerequiste/2.1.1-createiam/ title="Create IAM User and Obtain Access Key, Secret Access Key, Public Key" class=dd-item>
 <a href=../2-prerequiste/2.1.1-createiam/>
-<b> 2.1.2 </b> 🖥️ Hướng Dẫn Tạo EC2 Instance Trên AWS
+<b> 2.1.1 </b> Create IAM User and Obtain Access Key, Secret Access Key, Public Key
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
-<li data-nav-id=/2-prerequiste/2.1.2-createec2/ title="Triển Khai Docker Image Lên AWS ECR Trên Linux " class=dd-item>
+<li data-nav-id=/2-prerequiste/2.1.2-createec2/ title="Guide to Creating an EC2 Instance on AWS" class=dd-item>
 <a href=../2-prerequiste/2.1.2-createec2/>
-<b> 2.1.2 </b> Triển Khai Docker Image Lên AWS ECR Trên Linux
+<b> 2.1.2 </b> Guide to Creating an EC2 Instance on AWS
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
 </ul>
 </li>
-<li data-nav-id=/3-awscli/ title="Connect to EC2 servers" class="dd-item
+<li data-nav-id=/3-awscli/ title="Automation with AWS CLI" class="dd-item
 parent
 active">
 <a href=../3-awscli/>
-<b> 3. </b> Connect to EC2 servers
+<b> 3. </b> Automation with AWS CLI
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
-<li data-nav-id=/4-cloudformation/ title="Triển khai Tính năng Cảnh Báo và Phản Hồi Tự Động cho WebEnglish" class=dd-item>
+<li data-nav-id=/4-cloudformation/ title="Deploy AWS Network with CloudFormation (IaC)" class=dd-item>
 <a href=../4-cloudformation/>
-<b> 4. </b> Triển khai Tính năng Cảnh Báo và Phản Hồi Tự Động cho WebEnglish
+<b> 4. </b> Deploy AWS Network with CloudFormation (IaC)
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
-<li data-nav-id=/5-java-sdk/ title="Automated Response" class=dd-item>
+<li data-nav-id=/5-java-sdk/ title="Using AWS SDK for Java to Control AWS" class=dd-item>
 <a href=../5-java-sdk/>
-<b> 5. </b> Automated Response
+<b> 5. </b> Using AWS SDK for Java to Control AWS
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
-<li data-nav-id=/6-cleanup/ title="Clean Up Resources" class=dd-item>
+<li data-nav-id=/6-cleanup/ title="Resource Cleanup" class=dd-item>
 <a href=../6-cleanup/>
-<b>11. </b>Clean Up Resources
+<b> 6. </b> Resource Cleanup
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
@@ -107,7 +107,7 @@ active">
 <a class=padding>
 <i class="fas fa-language fa-fw"></i>
 <div class=select-style>
-<select id=select-language onchange="location=this.value"><option id=en value=https://QuocTrong21.github.io/FCJ-WorkShop/3-awscli/ selected>English</option><option id=vi value=https://QuocTrong21.github.io/FCJ-WorkShop/vi/3-awscli/>Tiếng Việt</option></select><svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="255" height="255" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255"><g><g id="arrow-drop-down"><polygon points="0,63.75 127.5,191.25 255,63.75"/></g></g></svg>
+<select id=select-language onchange="location=this.value"><option id=en value=https://QuocTrong21.github.io/FCJ-Workshop/3-awscli/ selected>English</option><option id=vi value=https://QuocTrong21.github.io/FCJ-Workshop/vi/3-awscli/>Tiếng Việt</option></select><svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="255" height="255" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255"><g><g id="arrow-drop-down"><polygon points="0,63.75 127.5,191.25 255,63.75"/></g></g></svg>
 </div>
 </a>
 </li>
@@ -153,18 +153,59 @@ active">
 </span>
 <span id=toc-menu><i class="fas fa-list-alt"></i></span>
 <span class=links>
-<a href=../>Session Management</a> > Connect to EC2 servers
+<a href=../>Overview – Network Automation with AWS CLI, AWS SDK (Java), and CloudFormation</a> > Automation with AWS CLI
 </span>
 </div>
 <div class=progress>
 <div class=wrapper>
 <nav id=TableOfContents>
 <ul>
-<li>
+<li><a href=#aws-cli-script-for-creating-network-and-ec2>AWS CLI Script for Creating Network and EC2</a>
 <ul>
-<li><a href=#content>Content</a></li>
+<li><a href=#1-create-vpc>1. Create VPC</a></li>
 </ul>
 </li>
+<li><a href=#cliimages3cli33png><img src=../images/3.cli/3.1.png alt=CLI>
+<img src=../images/3.cli/3.2.png alt=CLI>
+<img src=../images/3.cli/3.3.png alt=CLI></a>
+<ul>
+<li><a href=#2-create-subnet>2. Create Subnet</a></li>
+</ul>
+</li>
+<li><a href=#cliimages3cli320png><img src=../images/3.cli/3.20.png alt=CLI></a>
+<ul>
+<li><a href=#3-create-internet-gateway-and-attach-to-vpc>3. Create Internet Gateway and Attach to VPC</a></li>
+</ul>
+</li>
+<li><a href=#cliimages3cli35png><img src=../images/3.cli/3.4.png alt=CLI>
+<img src=../images/3.cli/3.5.png alt=CLI></a>
+<ul>
+<li><a href=#4-create-route-table-and-configure-internet-route>4. Create Route Table and Configure Internet Route</a></li>
+</ul>
+</li>
+<li><a href=#cliimages3cli38png><img src=../images/3.cli/3.6.png alt=CLI>
+<img src=../images/3.cli/3.7.png alt=CLI>
+<img src=../images/3.cli/3.8.png alt=CLI></a>
+<ul>
+<li><a href=#5-create-security-group>5. Create Security Group</a></li>
+</ul>
+</li>
+<li><a href=#cliimages3cli312png><img src=../images/3.cli/3.9.png alt=CLI>
+<img src=../images/3.cli/3.10.png alt=CLI>
+<img src=../images/3.cli/3.11.png alt=CLI>
+<img src=../images/3.cli/3.12.png alt=CLI></a>
+<ul>
+<li><a href=#6-create-key-pair>6. Create Key Pair</a></li>
+</ul>
+</li>
+<li><a href=#cliimages3cli314png><img src=../images/3.cli/3.13.png alt=CLI>
+<img src=../images/3.cli/3.14.png alt=CLI></a>
+<ul>
+<li><a href=#7-create-ec2-instance>7. Create EC2 Instance</a></li>
+<li><a href=#8-get-public-ip-of-ec2-instance>8. Get Public IP of EC2 Instance</a></li>
+</ul>
+</li>
+<li><a href=#cliimages3cli321png><img src=../images/3.cli/3.21.png alt=CLI></a></li>
 </ul>
 </nav>
 </div>
@@ -175,36 +216,145 @@ active">
 </div>
 <div id=body-inner>
 <h1>
-Connect to EC2 servers
+Automation with AWS CLI
 </h1>
-<p>In this step, we will connect to our EC2 servers, located in both the public and private subnets.</p>
-<h3 id=content>Content</h3>
-<p>3.1. <a href=3.1-public-instance/>Connect to EC2 Public Server</a> <br>
-3.2. <a href=3.2-private-instance/>Cconnect to EC2 Private Server</a></p>
+<h2 id=aws-cli-script-for-creating-network-and-ec2>AWS CLI Script for Creating Network and EC2</h2>
+<hr>
+<h3 id=1-create-vpc>1. Create VPC</h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>VPC_ID<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>aws ec2 create-vpc <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --cidr-block 10.0.0.0/16 <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --query <span style=color:#e6db74>&#39;Vpc.VpcId&#39;</span> <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --output text<span style=color:#66d9ef>)</span>
+
+echo <span style=color:#e6db74>&#34;VPC ID: </span>$VPC_ID<span style=color:#e6db74>&#34;</span>
+
+aws ec2 create-tags --resources $VPC_ID --tags Key<span style=color:#f92672>=</span>Name,Value<span style=color:#f92672>=</span>MovieVPC
+</code></pre></div><h2 id=cliimages3cli33png><img src=../images/3.cli/3.1.png alt=CLI>
+<img src=../images/3.cli/3.2.png alt=CLI>
+<img src=../images/3.cli/3.3.png alt=CLI></h2>
+<h3 id=2-create-subnet>2. Create Subnet</h3>
+<p>Create a subnet within the newly created VPC, specifying the Availability Zone and CIDR for this subnet.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>SUBNET_ID<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>aws ec2 create-subnet <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --vpc-id $VPC_ID <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --cidr-block 10.0.1.0/24 <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --availability-zone ap-southeast-1a <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --query <span style=color:#e6db74>&#39;Subnet.SubnetId&#39;</span> <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --output text<span style=color:#66d9ef>)</span>
+echo <span style=color:#e6db74>&#34;Subnet ID: </span>$SUBNET_ID<span style=color:#e6db74>&#34;</span>
+</code></pre></div><h2 id=cliimages3cli320png><img src=../images/3.cli/3.20.png alt=CLI></h2>
+<h3 id=3-create-internet-gateway-and-attach-to-vpc>3. Create Internet Gateway and Attach to VPC</h3>
+<p>Create an Internet Gateway to allow internet connectivity for the VPC and attach it to the created VPC.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>IGW_ID<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>aws ec2 create-internet-gateway <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --query <span style=color:#e6db74>&#39;InternetGateway.InternetGatewayId&#39;</span> <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --output text<span style=color:#66d9ef>)</span>
+
+aws ec2 attach-internet-gateway <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --internet-gateway-id $IGW_ID <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --vpc-id $VPC_ID
+
+<span style=color:#75715e># Tag IGW</span>
+aws ec2 create-tags --resources $IGW_ID --tags Key<span style=color:#f92672>=</span>Name,Value<span style=color:#f92672>=</span>MovieIGW
+</code></pre></div><h2 id=cliimages3cli35png><img src=../images/3.cli/3.4.png alt=CLI>
+<img src=../images/3.cli/3.5.png alt=CLI></h2>
+<h3 id=4-create-route-table-and-configure-internet-route>4. Create Route Table and Configure Internet Route</h3>
+<p>Create a Route Table for the VPC, add a route to direct internet traffic to the Internet Gateway, associate this Route Table with the subnet, and enable auto-assign public IP for the subnet.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>RT_ID<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>aws ec2 create-route-table <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --vpc-id $VPC_ID <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --query <span style=color:#e6db74>&#39;RouteTable.RouteTableId&#39;</span> <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --output text<span style=color:#66d9ef>)</span>
+
+<span style=color:#75715e># Assign route 0.0.0.0/0 to IGW</span>
+aws ec2 create-route <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --route-table-id $RT_ID <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --destination-cidr-block 0.0.0.0/0 <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --gateway-id $IGW_ID
+
+<span style=color:#75715e># Associate with subnet</span>
+aws ec2 associate-route-table <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --route-table-id $RT_ID <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --subnet-id $SUBNET_ID
+
+<span style=color:#75715e># Enable auto-assign public IP</span>
+aws ec2 modify-subnet-attribute --subnet-id $SUBNET_ID --map-public-ip-on-launch
+</code></pre></div><h2 id=cliimages3cli38png><img src=../images/3.cli/3.6.png alt=CLI>
+<img src=../images/3.cli/3.7.png alt=CLI>
+<img src=../images/3.cli/3.8.png alt=CLI></h2>
+<h3 id=5-create-security-group>5. Create Security Group</h3>
+<p>Create a new Security Group assigned to the VPC with rules allowing necessary ports such as SSH, HTTP, HTTPS, and MySQL.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>SG_ID<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>aws ec2 create-security-group <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --group-name MovieSG <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --description <span style=color:#e6db74>&#34;Allow HTTP, HTTPS, SSH, MySQL&#34;</span> <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --vpc-id $VPC_ID <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --query <span style=color:#e6db74>&#39;GroupId&#39;</span> --output text<span style=color:#66d9ef>)</span>
+
+<span style=color:#75715e># Open necessary ports</span>
+aws ec2 authorize-security-group-ingress --group-id $SG_ID --protocol tcp --port <span style=color:#ae81ff>22</span> --cidr 0.0.0.0/0
+aws ec2 authorize-security-group-ingress --group-id $SG_ID --protocol tcp --port <span style=color:#ae81ff>80</span> --cidr 0.0.0.0/0
+aws ec2 authorize-security-group-ingress --group-id $SG_ID --protocol tcp --port <span style=color:#ae81ff>443</span> --cidr 0.0.0.0/0
+aws ec2 authorize-security-group-ingress --group-id $SG_ID --protocol tcp --port <span style=color:#ae81ff>3306</span> --cidr 10.0.0.0/16
+
+echo <span style=color:#e6db74>&#34;Security Group ID: </span>$SG_ID<span style=color:#e6db74>&#34;</span>
+
+</code></pre></div><h2 id=cliimages3cli312png><img src=../images/3.cli/3.9.png alt=CLI>
+<img src=../images/3.cli/3.10.png alt=CLI>
+<img src=../images/3.cli/3.11.png alt=CLI>
+<img src=../images/3.cli/3.12.png alt=CLI></h2>
+<h3 id=6-create-key-pair>6. Create Key Pair</h3>
+<p>Create a Key Pair to use when SSH connecting to the EC2 Instance, and save the private key for security.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>aws ec2 create-key-pair --key-name MovieKey <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --query <span style=color:#e6db74>&#39;KeyMaterial&#39;</span> --output text &gt; MovieKey.pem
+
+chmod <span style=color:#ae81ff>400</span> MovieKey.pem
+
+</code></pre></div><h2 id=cliimages3cli314png><img src=../images/3.cli/3.13.png alt=CLI>
+<img src=../images/3.cli/3.14.png alt=CLI></h2>
+<h3 id=7-create-ec2-instance>7. Create EC2 Instance</h3>
+<p>Launch an EC2 Instance in the created subnet, assign the Security Group and Key Pair for management, and allocate a public IP address.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>INSTANCE_ID<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>aws ec2 run-instances <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --image-id ami-0df7a207adb9748c7 <span style=color:#ae81ff>\ </span> <span style=color:#75715e># Amazon Linux 2 (or Ubuntu depending on region)</span>
+  --instance-type t2.micro <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --key-name MovieKey <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --security-group-ids $SG_ID <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --subnet-id $SUBNET_ID <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --associate-public-ip-address <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --query <span style=color:#e6db74>&#39;Instances[0].InstanceId&#39;</span> <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --output text<span style=color:#66d9ef>)</span>
+
+echo <span style=color:#e6db74>&#34;EC2 Instance ID: </span>$INSTANCE_ID<span style=color:#e6db74>&#34;</span>
+</code></pre></div><p><img src=../images/3.cli/3.15.png alt=CLI>
+<img src=../images/3.cli/3.16.png alt=CLI></p>
+<hr>
+<h3 id=8-get-public-ip-of-ec2-instance>8. Get Public IP of EC2 Instance</h3>
+<p>After the EC2 is running, get the public IP address to access or SSH into the server.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>aws ec2 describe-instances --instance-ids $INSTANCE_ID <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --query <span style=color:#e6db74>&#39;Reservations[0].Instances[0].PublicIpAddress&#39;</span> --output text
+
+</code></pre></div><h2 id=cliimages3cli321png><img src=../images/3.cli/3.21.png alt=CLI></h2>
+<p>You can combine all the above steps into a single AWS CLI script to automate the entire process.</p>
 <footer class=footline>
 </footer>
 </div>
 </div>
 <div id=navigation>
-<a class="nav nav-prev" href=../2-prerequiste/2.1.2-createec2/ title="Triển Khai Docker Image Lên AWS ECR Trên Linux "> <i class="fa fa-chevron-left"></i></a>
-<a class="nav nav-next" href=../4-cloudformation/ title="Triển khai Tính năng Cảnh Báo và Phản Hồi Tự Động cho WebEnglish" style=margin-right:0><i class="fa fa-chevron-right"></i></a>
+<a class="nav nav-prev" href=../2-prerequiste/2.1.2-createec2/ title="Guide to Creating an EC2 Instance on AWS"> <i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-next" href=../4-cloudformation/ title="Deploy AWS Network with CloudFormation (IaC)" style=margin-right:0><i class="fa fa-chevron-right"></i></a>
 </div>
 </section>
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=../js/clipboard.min.js?1754929205></script>
-<script src=../js/perfect-scrollbar.min.js?1754929205></script>
-<script src=../js/perfect-scrollbar.jquery.min.js?1754929205></script>
-<script src=../js/jquery.sticky.js?1754929205></script>
-<script src=../js/featherlight.min.js?1754929205></script>
-<script src=../js/highlight.pack.js?1754929205></script>
+<script src=../js/clipboard.min.js?1754930965></script>
+<script src=../js/perfect-scrollbar.min.js?1754930965></script>
+<script src=../js/perfect-scrollbar.jquery.min.js?1754930965></script>
+<script src=../js/jquery.sticky.js?1754930965></script>
+<script src=../js/featherlight.min.js?1754930965></script>
+<script src=../js/highlight.pack.js?1754930965></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=../js/modernizr.custom-3.6.0.js?1754929205></script>
-<script src=../js/learn.js?1754929205></script>
-<script src=../js/hugo-learn.js?1754929205></script>
-<link href=../mermaid/mermaid.css?1754929205 rel=stylesheet>
-<script src=../mermaid/mermaid.js?1754929205></script>
+<script src=../js/modernizr.custom-3.6.0.js?1754930965></script>
+<script src=../js/learn.js?1754930965></script>
+<script src=../js/hugo-learn.js?1754930965></script>
+<link href=../mermaid/mermaid.css?1754930965 rel=stylesheet>
+<script src=../mermaid/mermaid.js?1754930965></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 <script>(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-158079754-2','auto'),ga('send','pageview')</script>
 </body>

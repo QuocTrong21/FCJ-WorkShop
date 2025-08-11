@@ -6,18 +6,18 @@
 <meta name=description content>
 <meta name=author content="journeyoftheaverageguy@gmail.com">
 <link rel=icon href=../images/favicon.png type=image/png>
-<title>Clean Up Resources :: AWS System Manager</title>
-<link href=../css/nucleus.css?1754929205 rel=stylesheet>
-<link href=../css/fontawesome-all.min.css?1754929205 rel=stylesheet>
-<link href=../css/hybrid.css?1754929205 rel=stylesheet>
-<link href=../css/featherlight.min.css?1754929205 rel=stylesheet>
-<link href=../css/perfect-scrollbar.min.css?1754929205 rel=stylesheet>
-<link href=../css/auto-complete.css?1754929205 rel=stylesheet>
-<link href=../css/atom-one-dark-reasonable.css?1754929205 rel=stylesheet>
-<link href=../css/theme.css?1754929205 rel=stylesheet>
-<link href=../css/hugo-theme.css?1754929205 rel=stylesheet>
-<link href=../css/theme-workshop.css?1754929205 rel=stylesheet>
-<script src=../js/jquery-3.3.1.min.js?1754929205></script>
+<title>Resource Cleanup :: AWS System Manager</title>
+<link href=../css/nucleus.css?1754930965 rel=stylesheet>
+<link href=../css/fontawesome-all.min.css?1754930965 rel=stylesheet>
+<link href=../css/hybrid.css?1754930965 rel=stylesheet>
+<link href=../css/featherlight.min.css?1754930965 rel=stylesheet>
+<link href=../css/perfect-scrollbar.min.css?1754930965 rel=stylesheet>
+<link href=../css/auto-complete.css?1754930965 rel=stylesheet>
+<link href=../css/atom-one-dark-reasonable.css?1754930965 rel=stylesheet>
+<link href=../css/theme.css?1754930965 rel=stylesheet>
+<link href=../css/hugo-theme.css?1754930965 rel=stylesheet>
+<link href=../css/theme-workshop.css?1754930965 rel=stylesheet>
+<script src=../js/jquery-3.3.1.min.js?1754930965></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
 </head>
 <body data-url=../6-cleanup/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=../js/lunr.min.js?1754929205></script>
-<script type=text/javascript src=../js/auto-complete.js?1754929205></script>
-<script type=text/javascript>var baseurl="https://QuocTrong21.github.io/FCJ-WorkShop/"</script>
-<script type=text/javascript src=../js/search.js?1754929205></script>
+<script type=text/javascript src=../js/lunr.min.js?1754930965></script>
+<script type=text/javascript src=../js/auto-complete.js?1754930965></script>
+<script type=text/javascript>var baseurl="https://QuocTrong21.github.io/FCJ-Workshop/"</script>
+<script type=text/javascript src=../js/search.js?1754930965></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -51,43 +51,43 @@
 <i class="fas fa-check read-icon"></i>
 </a>
 <ul>
-<li data-nav-id=/2-prerequiste/2.1.1-createiam/ title="🖥️ Hướng Dẫn Tạo EC2 Instance Trên AWS" class=dd-item>
+<li data-nav-id=/2-prerequiste/2.1.1-createiam/ title="Create IAM User and Obtain Access Key, Secret Access Key, Public Key" class=dd-item>
 <a href=../2-prerequiste/2.1.1-createiam/>
-<b> 2.1.2 </b> 🖥️ Hướng Dẫn Tạo EC2 Instance Trên AWS
+<b> 2.1.1 </b> Create IAM User and Obtain Access Key, Secret Access Key, Public Key
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
-<li data-nav-id=/2-prerequiste/2.1.2-createec2/ title="Triển Khai Docker Image Lên AWS ECR Trên Linux " class=dd-item>
+<li data-nav-id=/2-prerequiste/2.1.2-createec2/ title="Guide to Creating an EC2 Instance on AWS" class=dd-item>
 <a href=../2-prerequiste/2.1.2-createec2/>
-<b> 2.1.2 </b> Triển Khai Docker Image Lên AWS ECR Trên Linux
+<b> 2.1.2 </b> Guide to Creating an EC2 Instance on AWS
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
 </ul>
 </li>
-<li data-nav-id=/3-awscli/ title="Connect to EC2 servers" class=dd-item>
+<li data-nav-id=/3-awscli/ title="Automation with AWS CLI" class=dd-item>
 <a href=../3-awscli/>
-<b> 3. </b> Connect to EC2 servers
+<b> 3. </b> Automation with AWS CLI
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
-<li data-nav-id=/4-cloudformation/ title="Triển khai Tính năng Cảnh Báo và Phản Hồi Tự Động cho WebEnglish" class=dd-item>
+<li data-nav-id=/4-cloudformation/ title="Deploy AWS Network with CloudFormation (IaC)" class=dd-item>
 <a href=../4-cloudformation/>
-<b> 4. </b> Triển khai Tính năng Cảnh Báo và Phản Hồi Tự Động cho WebEnglish
+<b> 4. </b> Deploy AWS Network with CloudFormation (IaC)
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
-<li data-nav-id=/5-java-sdk/ title="Automated Response" class=dd-item>
+<li data-nav-id=/5-java-sdk/ title="Using AWS SDK for Java to Control AWS" class=dd-item>
 <a href=../5-java-sdk/>
-<b> 5. </b> Automated Response
+<b> 5. </b> Using AWS SDK for Java to Control AWS
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
-<li data-nav-id=/6-cleanup/ title="Clean Up Resources" class="dd-item
+<li data-nav-id=/6-cleanup/ title="Resource Cleanup" class="dd-item
 parent
 active">
 <a href=../6-cleanup/>
-<b>11. </b>Clean Up Resources
+<b> 6. </b> Resource Cleanup
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
@@ -107,7 +107,7 @@ active">
 <a class=padding>
 <i class="fas fa-language fa-fw"></i>
 <div class=select-style>
-<select id=select-language onchange="location=this.value"><option id=en value=https://QuocTrong21.github.io/FCJ-WorkShop/6-cleanup/ selected>English</option><option id=vi value=https://QuocTrong21.github.io/FCJ-WorkShop/vi/6-cleanup/>Tiếng Việt</option></select><svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="255" height="255" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255"><g><g id="arrow-drop-down"><polygon points="0,63.75 127.5,191.25 255,63.75"/></g></g></svg>
+<select id=select-language onchange="location=this.value"><option id=en value=https://QuocTrong21.github.io/FCJ-Workshop/6-cleanup/ selected>English</option><option id=vi value=https://QuocTrong21.github.io/FCJ-Workshop/vi/6-cleanup/>Tiếng Việt</option></select><svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="255" height="255" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255"><g><g id="arrow-drop-down"><polygon points="0,63.75 127.5,191.25 255,63.75"/></g></g></svg>
 </div>
 </a>
 </li>
@@ -153,7 +153,7 @@ active">
 </span>
 <span id=toc-menu><i class="fas fa-list-alt"></i></span>
 <span class=links>
-<a href=../>Session Management</a> > Clean Up Resources
+<a href=../>Overview – Network Automation with AWS CLI, AWS SDK (Java), and CloudFormation</a> > Resource Cleanup
 </span>
 </div>
 <div class=progress>
@@ -162,14 +162,21 @@ active">
 <ul>
 <li>
 <ul>
-<li><a href=#-delete-devops-guru>✅ Delete DevOps Guru</a></li>
-<li><a href=#-destroy-cdk-stack-using-cdk-destroy>✅ Destroy CDK Stack using <code>cdk destroy</code></a></li>
-<li><a href=#-delete-s3-bucket>✅ Delete S3 Bucket</a></li>
-<li><a href=#-delete-cloudformation-stack-if-not-using-cdk>✅ Delete CloudFormation Stack (if not using CDK)</a></li>
-<li><a href=#-delete-cloudwatch-logs--alarms--dashboards>✅ Delete CloudWatch Logs / Alarms / Dashboards</a></li>
-<li><a href=#-terminate-ec2-instances>✅ Terminate EC2 Instances</a></li>
-<li><a href=#-delete-vpc>✅ Delete VPC</a></li>
-<li><a href=#-delete-subnets-if-not-automatically-removed-with-vpc>✅ Delete Subnets (if not automatically removed with VPC)</a></li>
+<li><a href=#-delete-iam-users-and-access-keys>✅ Delete IAM Users and Access Keys</a></li>
+</ul>
+</li>
+<li><a href=#cleanimages6clean62png><img src=../images/6.clean/6.1.png alt=Clean><br>
+<img src=../images/6.clean/6.2.png alt=Clean></a>
+<ul>
+<li><a href=#-delete-ec2-instances-and-key-pairs>✅ Delete EC2 Instances and Key Pairs</a></li>
+</ul>
+</li>
+<li><a href=#cleanimages6clean64png><img src=../images/6.clean/6.3.png alt=Clean><br>
+<img src=../images/6.clean/6.4.png alt=Clean></a>
+<ul>
+<li><a href=#-delete-network-resources-created-by-aws-cli>✅ Delete Network Resources Created by AWS CLI</a></li>
+<li><a href=#-delete-cloudformation-stacks>✅ Delete CloudFormation Stacks</a></li>
+<li><a href=#-delete-resources-created-via-aws-sdk>✅ Delete Resources Created via AWS SDK</a></li>
 </ul>
 </li>
 </ul>
@@ -182,124 +189,93 @@ active">
 </div>
 <div id=body-inner>
 <h1>
-Clean Up Resources
+Resource Cleanup
 </h1>
-<p>We will proceed to <strong>clean up all AWS resources</strong> created during the practice session. Please follow the steps below to avoid incurring unnecessary charges.</p>
+<p>We will proceed to <strong>clean up all AWS resources</strong> created during the practice. Please follow the steps below to avoid incurring unnecessary costs.</p>
 <hr>
-<h3 id=-delete-devops-guru>✅ Delete DevOps Guru</h3>
-<ol>
-<li>Go to the <a href=https://console.aws.amazon.com/devops-guru/home>DevOps Guru Console</a></li>
-<li>On the left menu, choose <strong>Settings</strong>.</li>
-<li>Under <strong>CloudFormation stacks</strong>, click <strong>Delete</strong> for the DevOps Guru stack you activated.</li>
-<li>Confirm deletion if prompted.</li>
-</ol>
-<hr>
-<h3 id=-destroy-cdk-stack-using-cdk-destroy>✅ Destroy CDK Stack using <code>cdk destroy</code></h3>
-<ol>
-<li>Open the terminal in the directory containing your CDK project.</li>
-<li>Run the following command to destroy the CDK stack:
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>cdk destroy
-</code></pre></div></li>
-<li>When prompted, type <strong>y</strong> and press Enter.</li>
-<li>Wait for the stack destruction to complete.
-<img src=../images/6.clean/1.png alt=Clean>
-<img src=../images/6.clean/2.png alt=Clean>
-<img src=../images/6.clean/3.png alt=Clean></li>
-</ol>
-<hr>
-<h3 id=-delete-s3-bucket>✅ Delete S3 Bucket</h3>
-<ol>
-<li>Go to the <a href=https://s3.console.aws.amazon.com/s3/home>S3 Console</a></li>
-<li>Select the buckets you created (e.g., <code>cdk-bucket-*</code>, <code>log-bucket-*</code>, etc.).</li>
-<li>Perform the following steps:
+<h3 id=-delete-iam-users-and-access-keys>✅ Delete IAM Users and Access Keys</h3>
 <ul>
-<li>Click <strong>Empty</strong> → Type <code>permanently delete</code> → Click <strong>Empty</strong>.</li>
-<li>Then, click <strong>Delete</strong> → Enter the bucket name → Click <strong>Delete bucket</strong>.</li>
+<li>Go to AWS Management Console > IAM > Users.</li>
+<li>Select the user you created (e.g., <code>network-automation-user</code>).</li>
+<li>Delete all related Access Keys and Secret Keys.</li>
+<li>Delete the user if no longer needed.</li>
+</ul>
+<h2 id=cleanimages6clean62png><img src=../images/6.clean/6.1.png alt=Clean><br>
+<img src=../images/6.clean/6.2.png alt=Clean></h2>
+<h3 id=-delete-ec2-instances-and-key-pairs>✅ Delete EC2 Instances and Key Pairs</h3>
+<ul>
+<li>Go to EC2 Dashboard > Instances.</li>
+<li>Stop and terminate the created instances.</li>
+<li>Delete unused Key Pairs in the <strong>Key Pairs</strong> section.</li>
+</ul>
+<h2 id=cleanimages6clean64png><img src=../images/6.clean/6.3.png alt=Clean><br>
+<img src=../images/6.clean/6.4.png alt=Clean></h2>
+<h3 id=-delete-network-resources-created-by-aws-cli>✅ Delete Network Resources Created by AWS CLI</h3>
+<ul>
+<li>Delete Security Groups created via CLI.</li>
+<li>Delete Subnets, Route Tables, Internet Gateways, and finally the VPC.</li>
+<li>Note the deletion order:
+<ul>
+<li>Delete dependent resources first (Subnets, Route Table associations).</li>
+<li>Detach the Internet Gateway before deleting it.</li>
 </ul>
 </li>
-</ol>
-<hr>
-<h3 id=-delete-cloudformation-stack-if-not-using-cdk>✅ Delete CloudFormation Stack (if not using CDK)</h3>
-<ol>
-<li>Go to the <a href=https://console.aws.amazon.com/cloudformation/home>CloudFormation Console</a></li>
-<li>Select the stacks related to the lab (e.g., <code>DevOpsGuruStack</code>, <code>CDKStack</code>, etc.).</li>
-<li>Click <strong>Delete</strong> and confirm deletion.</li>
-</ol>
-<hr>
-<h3 id=-delete-cloudwatch-logs--alarms--dashboards>✅ Delete CloudWatch Logs / Alarms / Dashboards</h3>
-<ol>
-<li>Go to the <a href=https://console.aws.amazon.com/cloudwatch/home>CloudWatch Console</a></li>
-</ol>
-<p><strong>Delete Log Groups:</strong></p>
-<ul>
-<li>Go to <strong>Logs > Log groups</strong></li>
-<li>Select the log groups (e.g., <code>/aws/lambda/...</code>, <code>/aws/events/...</code>)</li>
-<li>Click <strong>Actions > Delete log groups</strong></li>
 </ul>
-<p><strong>Delete Alarms:</strong></p>
+<p><img src=../images/6.clean/6.5.png alt=Clean><br>
+<img src=../images/6.clean/6.6.png alt=Clean><br>
+<img src=../images/6.clean/6.7.png alt=Clean><br>
+<img src=../images/6.clean/6.8.png alt=Clean><br>
+<img src=../images/6.clean/6.9.png alt=Clean></p>
+<hr>
+<h3 id=-delete-cloudformation-stacks>✅ Delete CloudFormation Stacks</h3>
+<ol>
+<li>Go to <a href=https://console.aws.amazon.com/cloudformation/home>CloudFormation Console</a></li>
+<li>Select the stacks related to the lab.</li>
+<li>Click <strong>Delete</strong> and confirm stack deletion.</li>
+</ol>
+<p><img src=../images/6.clean/6.10.png alt=Clean></p>
+<hr>
+<h3 id=-delete-resources-created-via-aws-sdk>✅ Delete Resources Created via AWS SDK</h3>
 <ul>
-<li>Go to <strong>Alarms > All alarms</strong></li>
-<li>Select all alarms → Click <strong>Actions > Delete</strong></li>
+<li>
+<p>If you created Security Groups, EC2 instances, or CloudWatch Alarms via SDK, delete them either via SDK or AWS Console.</p>
+</li>
+<li>
+<p>Delete CloudWatch Alarm:</p>
+</li>
 </ul>
-<p><strong>Delete Dashboards:</strong></p>
-<ul>
-<li>Go to <strong>Dashboards</strong></li>
-<li>Select dashboard → Click <strong>Actions > Delete</strong>
-<img src=../images/6.clean/4.png alt=Clean>
-<img src=../images/6.clean/5.png alt=Clean></li>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>aws cloudwatch delete-alarm --alarm-name &lt;ALARM_NAME&gt;
+</code></pre></div><ul>
+<li>Delete SNS Topic:</li>
 </ul>
-<hr>
-<h3 id=-terminate-ec2-instances>✅ Terminate EC2 Instances</h3>
-<ol>
-<li>Go to the <a href=https://console.aws.amazon.com/ec2/v2/home>EC2 Console</a></li>
-<li>Go to <strong>Instances</strong></li>
-<li>Select the instances to delete → Click <strong>Instance state > Terminate instance</strong></li>
-<li>Confirm <strong>Terminate</strong>
-<img src=../images/6.clean/6.png alt=Clean></li>
-</ol>
-<hr>
-<h3 id=-delete-vpc>✅ Delete VPC</h3>
-<ol>
-<li>Go to the <a href=https://console.aws.amazon.com/vpc/home>VPC Console</a></li>
-<li>Go to <strong>Your VPCs</strong></li>
-<li>Select the VPC you created → Click <strong>Actions > Delete VPC</strong></li>
-<li>Confirm deletion</li>
-</ol>
-<hr>
-<h3 id=-delete-subnets-if-not-automatically-removed-with-vpc>✅ Delete Subnets (if not automatically removed with VPC)</h3>
-<ol>
-<li>In the VPC Console → Go to <strong>Subnets</strong></li>
-<li>Select the related subnets (Public, Private) → Click <strong>Actions > Delete subnet</strong></li>
-</ol>
-<hr>
-<blockquote>
-<p>✅ <strong>Note:</strong> After cleaning up, go to the <strong>Billing Dashboard</strong> to check for any remaining resources and ensure no extra costs are incurred.</p>
-</blockquote>
-<hr>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>aws sns delete-topic --topic-arn &lt;TopicARN&gt;
+</code></pre></div><p><img src=../images/6.clean/6.11.png alt=Clean>
+<img src=../images/6.clean/6.12.png alt=Clean></p>
+<p>✅ Note: After completing the cleanup, you can check the Billing Dashboard to verify your costs and ensure no resources remain active.</p>
 <footer class=footline>
 </footer>
 </div>
 </div>
 <div id=navigation>
-<a class="nav nav-prev" href=../5-java-sdk/ title="Automated Response"> <i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-prev" href=../5-java-sdk/ title="Using AWS SDK for Java to Control AWS"> <i class="fa fa-chevron-left"></i></a>
 <a class="nav nav-next" href=../1-introduce/ title=Introduction style=margin-right:0><i class="fa fa-chevron-right"></i></a>
 </div>
 </section>
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=../js/clipboard.min.js?1754929205></script>
-<script src=../js/perfect-scrollbar.min.js?1754929205></script>
-<script src=../js/perfect-scrollbar.jquery.min.js?1754929205></script>
-<script src=../js/jquery.sticky.js?1754929205></script>
-<script src=../js/featherlight.min.js?1754929205></script>
-<script src=../js/highlight.pack.js?1754929205></script>
+<script src=../js/clipboard.min.js?1754930965></script>
+<script src=../js/perfect-scrollbar.min.js?1754930965></script>
+<script src=../js/perfect-scrollbar.jquery.min.js?1754930965></script>
+<script src=../js/jquery.sticky.js?1754930965></script>
+<script src=../js/featherlight.min.js?1754930965></script>
+<script src=../js/highlight.pack.js?1754930965></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=../js/modernizr.custom-3.6.0.js?1754929205></script>
-<script src=../js/learn.js?1754929205></script>
-<script src=../js/hugo-learn.js?1754929205></script>
-<link href=../mermaid/mermaid.css?1754929205 rel=stylesheet>
-<script src=../mermaid/mermaid.js?1754929205></script>
+<script src=../js/modernizr.custom-3.6.0.js?1754930965></script>
+<script src=../js/learn.js?1754930965></script>
+<script src=../js/hugo-learn.js?1754930965></script>
+<link href=../mermaid/mermaid.css?1754930965 rel=stylesheet>
+<script src=../mermaid/mermaid.js?1754930965></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 <script>(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-158079754-2','auto'),ga('send','pageview')</script>
 </body>

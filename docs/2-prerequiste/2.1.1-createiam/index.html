@@ -6,18 +6,18 @@
 <meta name=description content>
 <meta name=author content="journeyoftheaverageguy@gmail.com">
 <link rel=icon href=../../images/favicon.png type=image/png>
-<title>🖥️ Hướng Dẫn Tạo EC2 Instance Trên AWS :: AWS System Manager</title>
-<link href=../../css/nucleus.css?1754929205 rel=stylesheet>
-<link href=../../css/fontawesome-all.min.css?1754929205 rel=stylesheet>
-<link href=../../css/hybrid.css?1754929205 rel=stylesheet>
-<link href=../../css/featherlight.min.css?1754929205 rel=stylesheet>
-<link href=../../css/perfect-scrollbar.min.css?1754929205 rel=stylesheet>
-<link href=../../css/auto-complete.css?1754929205 rel=stylesheet>
-<link href=../../css/atom-one-dark-reasonable.css?1754929205 rel=stylesheet>
-<link href=../../css/theme.css?1754929205 rel=stylesheet>
-<link href=../../css/hugo-theme.css?1754929205 rel=stylesheet>
-<link href=../../css/theme-workshop.css?1754929205 rel=stylesheet>
-<script src=../../js/jquery-3.3.1.min.js?1754929205></script>
+<title>Create IAM User and Obtain Access Key, Secret Access Key, Public Key :: AWS System Manager</title>
+<link href=../../css/nucleus.css?1754930965 rel=stylesheet>
+<link href=../../css/fontawesome-all.min.css?1754930965 rel=stylesheet>
+<link href=../../css/hybrid.css?1754930965 rel=stylesheet>
+<link href=../../css/featherlight.min.css?1754930965 rel=stylesheet>
+<link href=../../css/perfect-scrollbar.min.css?1754930965 rel=stylesheet>
+<link href=../../css/auto-complete.css?1754930965 rel=stylesheet>
+<link href=../../css/atom-one-dark-reasonable.css?1754930965 rel=stylesheet>
+<link href=../../css/theme.css?1754930965 rel=stylesheet>
+<link href=../../css/hugo-theme.css?1754930965 rel=stylesheet>
+<link href=../../css/theme-workshop.css?1754930965 rel=stylesheet>
+<script src=../../js/jquery-3.3.1.min.js?1754930965></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
 </head>
 <body data-url=../../2-prerequiste/2.1.1-createiam/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=../../js/lunr.min.js?1754929205></script>
-<script type=text/javascript src=../../js/auto-complete.js?1754929205></script>
-<script type=text/javascript>var baseurl="https://QuocTrong21.github.io/FCJ-WorkShop/"</script>
-<script type=text/javascript src=../../js/search.js?1754929205></script>
+<script type=text/javascript src=../../js/lunr.min.js?1754930965></script>
+<script type=text/javascript src=../../js/auto-complete.js?1754930965></script>
+<script type=text/javascript>var baseurl="https://QuocTrong21.github.io/FCJ-Workshop/"</script>
+<script type=text/javascript src=../../js/search.js?1754930965></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -52,43 +52,43 @@ parent">
 <i class="fas fa-check read-icon"></i>
 </a>
 <ul>
-<li data-nav-id=/2-prerequiste/2.1.1-createiam/ title="🖥️ Hướng Dẫn Tạo EC2 Instance Trên AWS" class="dd-item
+<li data-nav-id=/2-prerequiste/2.1.1-createiam/ title="Create IAM User and Obtain Access Key, Secret Access Key, Public Key" class="dd-item
 parent
 active">
 <a href=../../2-prerequiste/2.1.1-createiam/>
-<b> 2.1.2 </b> 🖥️ Hướng Dẫn Tạo EC2 Instance Trên AWS
+<b> 2.1.1 </b> Create IAM User and Obtain Access Key, Secret Access Key, Public Key
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
-<li data-nav-id=/2-prerequiste/2.1.2-createec2/ title="Triển Khai Docker Image Lên AWS ECR Trên Linux " class=dd-item>
+<li data-nav-id=/2-prerequiste/2.1.2-createec2/ title="Guide to Creating an EC2 Instance on AWS" class=dd-item>
 <a href=../../2-prerequiste/2.1.2-createec2/>
-<b> 2.1.2 </b> Triển Khai Docker Image Lên AWS ECR Trên Linux
+<b> 2.1.2 </b> Guide to Creating an EC2 Instance on AWS
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
 </ul>
 </li>
-<li data-nav-id=/3-awscli/ title="Connect to EC2 servers" class=dd-item>
+<li data-nav-id=/3-awscli/ title="Automation with AWS CLI" class=dd-item>
 <a href=../../3-awscli/>
-<b> 3. </b> Connect to EC2 servers
+<b> 3. </b> Automation with AWS CLI
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
-<li data-nav-id=/4-cloudformation/ title="Triển khai Tính năng Cảnh Báo và Phản Hồi Tự Động cho WebEnglish" class=dd-item>
+<li data-nav-id=/4-cloudformation/ title="Deploy AWS Network with CloudFormation (IaC)" class=dd-item>
 <a href=../../4-cloudformation/>
-<b> 4. </b> Triển khai Tính năng Cảnh Báo và Phản Hồi Tự Động cho WebEnglish
+<b> 4. </b> Deploy AWS Network with CloudFormation (IaC)
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
-<li data-nav-id=/5-java-sdk/ title="Automated Response" class=dd-item>
+<li data-nav-id=/5-java-sdk/ title="Using AWS SDK for Java to Control AWS" class=dd-item>
 <a href=../../5-java-sdk/>
-<b> 5. </b> Automated Response
+<b> 5. </b> Using AWS SDK for Java to Control AWS
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
-<li data-nav-id=/6-cleanup/ title="Clean Up Resources" class=dd-item>
+<li data-nav-id=/6-cleanup/ title="Resource Cleanup" class=dd-item>
 <a href=../../6-cleanup/>
-<b>11. </b>Clean Up Resources
+<b> 6. </b> Resource Cleanup
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
@@ -108,7 +108,7 @@ active">
 <a class=padding>
 <i class="fas fa-language fa-fw"></i>
 <div class=select-style>
-<select id=select-language onchange="location=this.value"><option id=en value=https://QuocTrong21.github.io/FCJ-WorkShop/2-prerequiste/2.1.1-createiam/ selected>English</option><option id=vi value=https://QuocTrong21.github.io/FCJ-WorkShop/vi/2-prerequiste/2.1.1-createiam/>Tiếng Việt</option></select><svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="255" height="255" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255"><g><g id="arrow-drop-down"><polygon points="0,63.75 127.5,191.25 255,63.75"/></g></g></svg>
+<select id=select-language onchange="location=this.value"><option id=en value=https://QuocTrong21.github.io/FCJ-Workshop/2-prerequiste/2.1.1-createiam/ selected>English</option><option id=vi value=https://QuocTrong21.github.io/FCJ-Workshop/vi/2-prerequiste/2.1.1-createiam/>Tiếng Việt</option></select><svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="255" height="255" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255"><g><g id="arrow-drop-down"><polygon points="0,63.75 127.5,191.25 255,63.75"/></g></g></svg>
 </div>
 </a>
 </li>
@@ -154,25 +154,20 @@ active">
 </span>
 <span id=toc-menu><i class="fas fa-list-alt"></i></span>
 <span class=links>
-<a href=../../>Session Management</a> > <a href=../../2-prerequiste/>Steps to Prepare the Environment for Network Automation on AWS</a> > 🖥️ Hướng Dẫn Tạo EC2 Instance Trên AWS
+<a href=../../>Overview – Network Automation with AWS CLI, AWS SDK (Java), and CloudFormation</a> > <a href=../../2-prerequiste/>Steps to Prepare the Environment for Network Automation on AWS</a> > Create IAM User and Obtain Access Key, Secret Access Key, Public Key
 </span>
 </div>
 <div class=progress>
 <div class=wrapper>
 <nav id=TableOfContents>
 <ul>
-<li><a href=#-mục-tiêu>📌 Mục Tiêu</a></li>
-<li><a href=#-yêu-cầu-trước-khi-bắt-đầu>🧰 Yêu Cầu Trước Khi Bắt Đầu</a></li>
-<li><a href=#-các-bước-thực-hiện>🛠️ Các Bước Thực Hiện</a>
+<li><a href=#1-create-iam-user-and-obtain-access-key-secret-access-key-public-key>1. Create IAM User and Obtain Access Key, Secret Access Key, Public Key</a>
 <ul>
-<li><a href=#1-đăng-nhập-aws-console>1. Đăng Nhập AWS Console</a></li>
-<li><a href=#2-tạo-ec2-instance>2. Tạo EC2 Instance</a></li>
-<li><a href=#3-kết-nối-ec2-bằng-ssh>3. Kết Nối EC2 Bằng SSH</a></li>
+<li><a href=#steps-to-perform>Steps to Perform</a></li>
+<li><a href=#important-notes>Important Notes</a></li>
+<li><a href=#additional-references>Additional References</a></li>
 </ul>
 </li>
-<li><a href=#-kết-quả>✅ Kết Quả</a></li>
-<li><a href=#-mẹo-quản-lý>🧹 Mẹo Quản Lý</a></li>
-<li><a href=#-tài-liệu-tham-khảo>📚 Tài Liệu Tham Khảo</a></li>
 </ul>
 </nav>
 </div>
@@ -183,69 +178,42 @@ active">
 </div>
 <div id=body-inner>
 <h1>
-🖥️ Hướng Dẫn Tạo EC2 Instance Trên AWS
+Create IAM User and Obtain Access Key, Secret Access Key, Public Key
 </h1>
-<h2 id=-mục-tiêu>📌 Mục Tiêu</h2>
-<p>Tạo một EC2 instance sử dụng cấu hình mặc định để triển khai ứng dụng hoặc kiểm thử môi trường.</p>
-<h2 id=-yêu-cầu-trước-khi-bắt-đầu>🧰 Yêu Cầu Trước Khi Bắt Đầu</h2>
-<ul>
-<li>Tài khoản AWS hợp lệ</li>
-<li>Đăng nhập AWS Console hoặc cài sẵn AWS CLI</li>
-<li>Tạo key pair để SSH (nếu cần)
-c</li>
-</ul>
-<h2 id=-các-bước-thực-hiện>🛠️ Các Bước Thực Hiện</h2>
-<h3 id=1-đăng-nhập-aws-console>1. Đăng Nhập AWS Console</h3>
-<p>Truy cập: <a href=https://console.aws.amazon.com/ec2/>https://console.aws.amazon.com/ec2/</a></p>
-<h3 id=2-tạo-ec2-instance>2. Tạo EC2 Instance</h3>
-<h4 id=cách-1-qua-aws-console>Cách 1: Qua AWS Console</h4>
+<h2 id=1-create-iam-user-and-obtain-access-key-secret-access-key-public-key>1. Create IAM User and Obtain Access Key, Secret Access Key, Public Key</h2>
+<p>To work with AWS CLI, AWS SDK, or CloudFormation, the first step is to create an IAM User with appropriate access permissions and obtain the Access Key and Secret Access Key for configuration.</p>
+<hr>
+<h3 id=steps-to-perform>Steps to Perform</h3>
 <ol>
-<li>Vào <strong>EC2 Dashboard</strong></li>
-<li>Nhấn <strong>Launch Instance</strong></li>
-<li>Nhập tên: <code>workshop</code></li>
-<li><strong>Chọn AMI</strong>: <code>Amazon Linux 2023</code> (hoặc Amazon Linux 2)</li>
-<li><strong>Loại Instance</strong>: <code>t2.micro</code> (Free tier)</li>
-<li><strong>Key pair</strong>: Chọn hoặc tạo mới</li>
-<li><strong>Network Settings</strong>:
+<li>Log in to the AWS Management Console with Admin privileges.</li>
+<li>Navigate to <strong>IAM</strong> > <strong>Users</strong> > <strong>Add user</strong>.</li>
+<li>Enter the user name (e.g., <code>network-automation-user</code>).</li>
+<li>Select <strong>Programmatic access</strong> to generate Access Key and Secret Access Key.</li>
+<li>Assign appropriate permissions, for example:
 <ul>
-<li>Allow SSH (port 22)</li>
-<li>Allow HTTP (port 80) nếu cần</li>
+<li><code>AmazonEC2FullAccess</code></li>
+<li><code>AmazonVPCFullAccess</code></li>
+<li><code>IAMReadOnlyAccess</code></li>
+<li><code>AdministratorAccess</code> (for testing purposes)</li>
 </ul>
 </li>
-<li><strong>Ổ đĩa</strong>: Mặc định 8 GB (gp2)</li>
-<li>Nhấn <strong>Launch Instance</strong>
-<img src=../../images/2.prerequisite/12-1.jpg alt=VPC>
-<img src=../../images/2.prerequisite/12-2.jpg alt=VPC>
-<img src=../../images/2.prerequisite/12-3.jpg alt=VPC>
-<img src=../../images/2.prerequisite/12-4.jpg alt=VPC>
-<img src=../../images/2.prerequisite/12-5.jpg alt=VPC>
-<img src=../../images/2.prerequisite/12-6.jpg alt=VPC>
-<img src=../../images/2.prerequisite/12-7.jpg alt=VPC>
-<img src=../../images/2.prerequisite/12-8.jpg alt=VPC></li>
+<li>Click <strong>Create user</strong> and download the CSV file containing the Access Key and Secret Access Key.</li>
+<li>Create or import an <strong>EC2 Key Pair</strong> for SSH access (if needed).<br>
+<img src=../../images/2.prerequisite/2.1.png alt=VPC><br>
+<img src=../../images/2.prerequisite/2.2.png alt=VPC></li>
 </ol>
-<h4 id=cách-2-dùng-aws-cli>Cách 2: Dùng AWS CLI</h4>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>aws ec2 run-instances   --image-id ami-0c02fb55956c7d316 <span style=color:#ae81ff>\ </span><span style=color:#75715e># Amazon Linux 2 (us-east-1)</span>
-  --instance-type t2.micro   --key-name my-key   --security-groups default   --tag-specifications <span style=color:#e6db74>&#39;ResourceType=instance,Tags=[{Key=Name,Value=MyEC2Default}]&#39;</span>
-</code></pre></div><blockquote>
-<p>📝 Ghi chú: Thay <code>ami-xxxx</code> và <code>my-key</code> bằng ID và key pair tương ứng trong region của bạn.</p>
-</blockquote>
-<h3 id=3-kết-nối-ec2-bằng-ssh>3. Kết Nối EC2 Bằng SSH</h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>ssh -i my-key.pem ec2-user@&lt;public-ip&gt;
-</code></pre></div><h2 id=-kết-quả>✅ Kết Quả</h2>
+<h3 id=important-notes>Important Notes</h3>
 <ul>
-<li>EC2 instance được tạo và chạy trong vài phút.</li>
-<li>Có thể SSH để cài đặt thêm hoặc triển khai ứng dụng.
-<img src=../../images/2.prerequisite/12-9.jpg alt=VPC></li>
+<li><strong>Protect your Access Key and Secret Key:</strong> Do not share or expose them publicly.</li>
+<li>If the user has broad permissions (AdministratorAccess), use only in testing environments.</li>
+<li>Use IAM Roles for EC2 instances whenever possible to avoid using Access Keys directly.</li>
 </ul>
-<h2 id=-mẹo-quản-lý>🧹 Mẹo Quản Lý</h2>
+<hr>
+<h3 id=additional-references>Additional References</h3>
 <ul>
-<li>Tắt hoặc terminate instance sau khi dùng để tránh mất phí.</li>
-<li>Gắn Elastic IP nếu muốn giữ IP cố định.</li>
-</ul>
-<h2 id=-tài-liệu-tham-khảo>📚 Tài Liệu Tham Khảo</h2>
-<ul>
-<li><a href=https://docs.aws.amazon.com/ec2/index.html>EC2 User Guide</a></li>
-<li><a href=https://aws.amazon.com/amazon-linux-ami/>Amazon Linux AMI</a></li>
+<li><a href=https://000002.awsstudygroup.com/en/>Guide to Creating IAM User on AWS</a></li>
+<li><a href=https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html>Managing Access Keys for IAM Users</a></li>
+<li><a href=https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html>Key Pairs for Amazon EC2</a></li>
 </ul>
 <footer class=footline>
 </footer>
@@ -253,24 +221,24 @@ c</li>
 </div>
 <div id=navigation>
 <a class="nav nav-prev" href=../../2-prerequiste/ title="Steps to Prepare the Environment for Network Automation on AWS"> <i class="fa fa-chevron-left"></i></a>
-<a class="nav nav-next" href=../../2-prerequiste/2.1.2-createec2/ title="Triển Khai Docker Image Lên AWS ECR Trên Linux " style=margin-right:0><i class="fa fa-chevron-right"></i></a>
+<a class="nav nav-next" href=../../2-prerequiste/2.1.2-createec2/ title="Guide to Creating an EC2 Instance on AWS" style=margin-right:0><i class="fa fa-chevron-right"></i></a>
 </div>
 </section>
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=../../js/clipboard.min.js?1754929205></script>
-<script src=../../js/perfect-scrollbar.min.js?1754929205></script>
-<script src=../../js/perfect-scrollbar.jquery.min.js?1754929205></script>
-<script src=../../js/jquery.sticky.js?1754929205></script>
-<script src=../../js/featherlight.min.js?1754929205></script>
-<script src=../../js/highlight.pack.js?1754929205></script>
+<script src=../../js/clipboard.min.js?1754930965></script>
+<script src=../../js/perfect-scrollbar.min.js?1754930965></script>
+<script src=../../js/perfect-scrollbar.jquery.min.js?1754930965></script>
+<script src=../../js/jquery.sticky.js?1754930965></script>
+<script src=../../js/featherlight.min.js?1754930965></script>
+<script src=../../js/highlight.pack.js?1754930965></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=../../js/modernizr.custom-3.6.0.js?1754929205></script>
-<script src=../../js/learn.js?1754929205></script>
-<script src=../../js/hugo-learn.js?1754929205></script>
-<link href=../../mermaid/mermaid.css?1754929205 rel=stylesheet>
-<script src=../../mermaid/mermaid.js?1754929205></script>
+<script src=../../js/modernizr.custom-3.6.0.js?1754930965></script>
+<script src=../../js/learn.js?1754930965></script>
+<script src=../../js/hugo-learn.js?1754930965></script>
+<link href=../../mermaid/mermaid.css?1754930965 rel=stylesheet>
+<script src=../../mermaid/mermaid.js?1754930965></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 <script>(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-158079754-2','auto'),ga('send','pageview')</script>
 </body>

@@ -6,18 +6,18 @@
 <meta name=description content>
 <meta name=author content="journeyoftheaverageguy@gmail.com">
 <link rel=icon href=../images/favicon.png type=image/png>
-<title>Automated Response :: AWS System Manager</title>
-<link href=../css/nucleus.css?1754929205 rel=stylesheet>
-<link href=../css/fontawesome-all.min.css?1754929205 rel=stylesheet>
-<link href=../css/hybrid.css?1754929205 rel=stylesheet>
-<link href=../css/featherlight.min.css?1754929205 rel=stylesheet>
-<link href=../css/perfect-scrollbar.min.css?1754929205 rel=stylesheet>
-<link href=../css/auto-complete.css?1754929205 rel=stylesheet>
-<link href=../css/atom-one-dark-reasonable.css?1754929205 rel=stylesheet>
-<link href=../css/theme.css?1754929205 rel=stylesheet>
-<link href=../css/hugo-theme.css?1754929205 rel=stylesheet>
-<link href=../css/theme-workshop.css?1754929205 rel=stylesheet>
-<script src=../js/jquery-3.3.1.min.js?1754929205></script>
+<title>Using AWS SDK for Java to Control AWS :: AWS System Manager</title>
+<link href=../css/nucleus.css?1754930965 rel=stylesheet>
+<link href=../css/fontawesome-all.min.css?1754930965 rel=stylesheet>
+<link href=../css/hybrid.css?1754930965 rel=stylesheet>
+<link href=../css/featherlight.min.css?1754930965 rel=stylesheet>
+<link href=../css/perfect-scrollbar.min.css?1754930965 rel=stylesheet>
+<link href=../css/auto-complete.css?1754930965 rel=stylesheet>
+<link href=../css/atom-one-dark-reasonable.css?1754930965 rel=stylesheet>
+<link href=../css/theme.css?1754930965 rel=stylesheet>
+<link href=../css/hugo-theme.css?1754930965 rel=stylesheet>
+<link href=../css/theme-workshop.css?1754930965 rel=stylesheet>
+<script src=../js/jquery-3.3.1.min.js?1754930965></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
 </head>
 <body data-url=../5-java-sdk/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=../js/lunr.min.js?1754929205></script>
-<script type=text/javascript src=../js/auto-complete.js?1754929205></script>
-<script type=text/javascript>var baseurl="https://QuocTrong21.github.io/FCJ-WorkShop/"</script>
-<script type=text/javascript src=../js/search.js?1754929205></script>
+<script type=text/javascript src=../js/lunr.min.js?1754930965></script>
+<script type=text/javascript src=../js/auto-complete.js?1754930965></script>
+<script type=text/javascript>var baseurl="https://QuocTrong21.github.io/FCJ-Workshop/"</script>
+<script type=text/javascript src=../js/search.js?1754930965></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -51,43 +51,43 @@
 <i class="fas fa-check read-icon"></i>
 </a>
 <ul>
-<li data-nav-id=/2-prerequiste/2.1.1-createiam/ title="🖥️ Hướng Dẫn Tạo EC2 Instance Trên AWS" class=dd-item>
+<li data-nav-id=/2-prerequiste/2.1.1-createiam/ title="Create IAM User and Obtain Access Key, Secret Access Key, Public Key" class=dd-item>
 <a href=../2-prerequiste/2.1.1-createiam/>
-<b> 2.1.2 </b> 🖥️ Hướng Dẫn Tạo EC2 Instance Trên AWS
+<b> 2.1.1 </b> Create IAM User and Obtain Access Key, Secret Access Key, Public Key
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
-<li data-nav-id=/2-prerequiste/2.1.2-createec2/ title="Triển Khai Docker Image Lên AWS ECR Trên Linux " class=dd-item>
+<li data-nav-id=/2-prerequiste/2.1.2-createec2/ title="Guide to Creating an EC2 Instance on AWS" class=dd-item>
 <a href=../2-prerequiste/2.1.2-createec2/>
-<b> 2.1.2 </b> Triển Khai Docker Image Lên AWS ECR Trên Linux
+<b> 2.1.2 </b> Guide to Creating an EC2 Instance on AWS
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
 </ul>
 </li>
-<li data-nav-id=/3-awscli/ title="Connect to EC2 servers" class=dd-item>
+<li data-nav-id=/3-awscli/ title="Automation with AWS CLI" class=dd-item>
 <a href=../3-awscli/>
-<b> 3. </b> Connect to EC2 servers
+<b> 3. </b> Automation with AWS CLI
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
-<li data-nav-id=/4-cloudformation/ title="Triển khai Tính năng Cảnh Báo và Phản Hồi Tự Động cho WebEnglish" class=dd-item>
+<li data-nav-id=/4-cloudformation/ title="Deploy AWS Network with CloudFormation (IaC)" class=dd-item>
 <a href=../4-cloudformation/>
-<b> 4. </b> Triển khai Tính năng Cảnh Báo và Phản Hồi Tự Động cho WebEnglish
+<b> 4. </b> Deploy AWS Network with CloudFormation (IaC)
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
-<li data-nav-id=/5-java-sdk/ title="Automated Response" class="dd-item
+<li data-nav-id=/5-java-sdk/ title="Using AWS SDK for Java to Control AWS" class="dd-item
 parent
 active">
 <a href=../5-java-sdk/>
-<b> 5. </b> Automated Response
+<b> 5. </b> Using AWS SDK for Java to Control AWS
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
-<li data-nav-id=/6-cleanup/ title="Clean Up Resources" class=dd-item>
+<li data-nav-id=/6-cleanup/ title="Resource Cleanup" class=dd-item>
 <a href=../6-cleanup/>
-<b>11. </b>Clean Up Resources
+<b> 6. </b> Resource Cleanup
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
@@ -107,7 +107,7 @@ active">
 <a class=padding>
 <i class="fas fa-language fa-fw"></i>
 <div class=select-style>
-<select id=select-language onchange="location=this.value"><option id=en value=https://QuocTrong21.github.io/FCJ-WorkShop/5-java-sdk/ selected>English</option><option id=vi value=https://QuocTrong21.github.io/FCJ-WorkShop/vi/5-java-sdk/>Tiếng Việt</option></select><svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="255" height="255" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255"><g><g id="arrow-drop-down"><polygon points="0,63.75 127.5,191.25 255,63.75"/></g></g></svg>
+<select id=select-language onchange="location=this.value"><option id=en value=https://QuocTrong21.github.io/FCJ-Workshop/5-java-sdk/ selected>English</option><option id=vi value=https://QuocTrong21.github.io/FCJ-Workshop/vi/5-java-sdk/>Tiếng Việt</option></select><svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="255" height="255" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255"><g><g id="arrow-drop-down"><polygon points="0,63.75 127.5,191.25 255,63.75"/></g></g></svg>
 </div>
 </a>
 </li>
@@ -153,35 +153,22 @@ active">
 </span>
 <span id=toc-menu><i class="fas fa-list-alt"></i></span>
 <span class=links>
-<a href=../>Session Management</a> > Automated Response
+<a href=../>Overview – Network Automation with AWS CLI, AWS SDK (Java), and CloudFormation</a> > Using AWS SDK for Java to Control AWS
 </span>
 </div>
 <div class=progress>
 <div class=wrapper>
 <nav id=TableOfContents>
 <ul>
-<li><a href=#-1-thiết-kế-quy-trình-cảnh-báo-3-cấp>📌 1. Thiết Kế Quy Trình Cảnh Báo 3 Cấp</a></li>
-<li><a href=#-2-tạo-sns-topic-và-subscriptions>🧪 2. Tạo SNS Topic và Subscriptions</a>
+<li><a href=#using-aws-sdk-for-java>Using AWS SDK for Java</a>
 <ul>
-<li><a href=#21-tạo-các-sns-topic>2.1 Tạo các SNS Topic</a></li>
-<li><a href=#22-đăng-ký-email-vào-topic-phải-xác-nhận>2.2 Đăng ký Email vào Topic (phải xác nhận)</a></li>
+<li><a href=#objectives>Objectives</a></li>
+<li><a href=#project-structure>Project Structure</a></li>
+<li><a href=#implementation-steps>Implementation Steps</a></li>
+<li><a href=#initialize-maven-project>Initialize Maven project.</a></li>
+<li><a href=#results>Results</a></li>
 </ul>
 </li>
-<li><a href=#-3-tạo-cloudwatch-alarm---level-1>📈 3. Tạo CloudWatch Alarm - Level 1</a></li>
-<li><a href=#-4-lambda-leo-thang>🛠 4. Lambda Leo Thang</a>
-<ul>
-<li><a href=#41-tạo-iam-role-cho-lambda>4.1 Tạo IAM Role cho Lambda</a></li>
-<li><a href=#42-mã-lambda-alert_escalatorpy>4.2 Mã Lambda: <code>alert_escalator.py</code></a></li>
-<li><a href=#43-deploy-lambda-function>4.3 Deploy Lambda Function</a></li>
-</ul>
-</li>
-<li><a href=#-5-tạo-alarm-gọi-lambda---level-2>📈 5. Tạo Alarm Gọi Lambda - Level 2</a></li>
-<li><a href=#-tổng-quan-leo-thang>🔁 Tổng Quan Leo Thang</a></li>
-<li><a href=#-6-cloudwatch-anomaly-detection-tùy-chọn-nâng-cao>📊 6. CloudWatch Anomaly Detection (Tùy chọn nâng cao)</a></li>
-<li><a href=#-7-step-functions-tùy-chọn-tự-động-phản-hồi>🌀 7. Step Functions (Tùy chọn tự động phản hồi)</a></li>
-<li><a href=#-8-kiểm-thử-hệ-thống>🧪 8. Kiểm thử hệ thống</a></li>
-<li><a href=#-9-tổng-kết>📘 9. Tổng Kết</a></li>
-<li><a href=#-gợi-ý-nâng-cao>🧩 Gợi ý nâng cao</a></li>
 </ul>
 </nav>
 </div>
@@ -192,240 +179,241 @@ active">
 </div>
 <div id=body-inner>
 <h1>
-Automated Response
+Using AWS SDK for Java to Control AWS
 </h1>
-<hr>
-<hr>
-<h1 id=-triển-khai-hệ-thống-cảnh-báo--leo-thang-sự-cố-chuyên-nghiệp>🚨 Triển Khai Hệ Thống Cảnh Báo & Leo Thang Sự Cố Chuyên Nghiệp</h1>
-<blockquote>
-<p><strong>Mục tiêu</strong>: Hệ thống cảnh báo đa cấp, tự động phát hiện bất thường, gửi cảnh báo đến đúng người, và tự phản hồi nếu cần.</p>
-</blockquote>
-<hr>
-<h2 id=-1-thiết-kế-quy-trình-cảnh-báo-3-cấp>📌 1. Thiết Kế Quy Trình Cảnh Báo 3 Cấp</h2>
-<table>
-<thead>
-<tr>
-<th>Cấp</th>
-<th>Tên</th>
-<th>Người nhận</th>
-<th>Thời gian phản hồi</th>
-<th>Công cụ</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Cảnh báo kỹ thuật (DevOps)</td>
-<td>Nhóm DevOps</td>
-<td>≤ 15 phút</td>
-<td>Email / SNS</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Cảnh báo gấp (On-call)</td>
-<td>Dev trực hotline</td>
-<td>≤ 5 phút</td>
-<td>SNS + Lambda</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Cảnh báo quản lý (Manager)</td>
-<td>Quản lý cấp cao</td>
-<td>Trong giờ hành chính</td>
-<td>Email / SMS</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id=-2-tạo-sns-topic-và-subscriptions>🧪 2. Tạo SNS Topic và Subscriptions</h2>
-<h3 id=21-tạo-các-sns-topic>2.1 Tạo các SNS Topic</h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>aws sns create-topic --name WebEnglishAlert-Level1
-aws sns create-topic --name WebEnglishAlert-Level2
-aws sns create-topic --name WebEnglishAlert-Level3
-</code></pre></div><p><img src=../images/5.fwd/1.jpg alt=FWD></p>
-<h3 id=22-đăng-ký-email-vào-topic-phải-xác-nhận>2.2 Đăng ký Email vào Topic (phải xác nhận)</h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>aws sns subscribe <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --topic-arn arn:aws:sns:ap-northeast-1:&lt;ACCOUNT_ID&gt;:WebEnglishAlert-Level1 <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --protocol email <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --notification-endpoint devops@example.com
-
-aws sns subscribe <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --topic-arn arn:aws:sns:ap-northeast-1:&lt;ACCOUNT_ID&gt;:WebEnglishAlert-Level3 <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --protocol email <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --notification-endpoint ceo@example.com
-</code></pre></div><p><img src=../images/5.fwd/2.jpg alt=FWD></p>
-<blockquote>
-<p>✅ <strong>Kiểm tra email để xác nhận (Confirm Subscription)</strong>.
-<img src=../images/5.fwd/3.jpg alt=FWD>
-<img src=../images/5.fwd/4.jpg alt=FWD></p>
-</blockquote>
-<hr>
-<h2 id=-3-tạo-cloudwatch-alarm---level-1>📈 3. Tạo CloudWatch Alarm - Level 1</h2>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>aws cloudwatch put-metric-alarm <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --alarm-name CPU-High-Level1 <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --alarm-description <span style=color:#e6db74>&#34;Cảnh báo CPU cao - cấp 1&#34;</span> <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --metric-name cpu_usage_active <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --namespace WebEnglishMetrics <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --statistic Average <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --period <span style=color:#ae81ff>300</span> <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --evaluation-periods <span style=color:#ae81ff>1</span> <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --threshold <span style=color:#ae81ff>80</span> <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --comparison-operator GreaterThanThreshold <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --actions-enabled <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --alarm-actions arn:aws:sns:ap-northeast-1:&lt;ACCOUNT_ID&gt;:WebEnglishAlert-Level1
-</code></pre></div><p><img src=../images/5.fwd/6.jpg alt=FWD></p>
-<hr>
-<h2 id=-4-lambda-leo-thang>🛠 4. Lambda Leo Thang</h2>
-<h3 id=41-tạo-iam-role-cho-lambda>4.1 Tạo IAM Role cho Lambda</h3>
-<p><strong>trust-policy.json</strong></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
-  <span style=color:#f92672>&#34;Version&#34;</span>: <span style=color:#e6db74>&#34;2012-10-17&#34;</span>,
-  <span style=color:#f92672>&#34;Statement&#34;</span>: [{
-    <span style=color:#f92672>&#34;Effect&#34;</span>: <span style=color:#e6db74>&#34;Allow&#34;</span>,
-    <span style=color:#f92672>&#34;Principal&#34;</span>: { <span style=color:#f92672>&#34;Service&#34;</span>: <span style=color:#e6db74>&#34;lambda.amazonaws.com&#34;</span> },
-    <span style=color:#f92672>&#34;Action&#34;</span>: <span style=color:#e6db74>&#34;sts:AssumeRole&#34;</span>
-  }]
-}
-</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>aws iam create-role <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --role-name LambdaAlertEscalatorRole <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --assume-role-policy-document file://trust-policy.json
-
-aws iam attach-role-policy <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --role-name LambdaAlertEscalatorRole <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --policy-arn arn:aws:iam::aws:policy/CloudWatchReadOnlyAccess
-
-aws iam attach-role-policy <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --role-name LambdaAlertEscalatorRole <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --policy-arn arn:aws:iam::aws:policy/AmazonSNSFullAccess
-</code></pre></div><p><img src=../images/5.fwd/7.jpg alt=FWD>
-<img src=../images/5.fwd/8.jpg alt=FWD></p>
-<hr>
-<h3 id=42-mã-lambda-alert_escalatorpy>4.2 Mã Lambda: <code>alert_escalator.py</code></h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> boto3
-
-<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>lambda_handler</span>(event, context):
-    cloudwatch <span style=color:#f92672>=</span> boto3<span style=color:#f92672>.</span>client(<span style=color:#e6db74>&#39;cloudwatch&#39;</span>)
-    sns <span style=color:#f92672>=</span> boto3<span style=color:#f92672>.</span>client(<span style=color:#e6db74>&#39;sns&#39;</span>)
-
-    alarm_name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;CPU-High-Level1&#34;</span>
-    response <span style=color:#f92672>=</span> cloudwatch<span style=color:#f92672>.</span>describe_alarms(AlarmNames<span style=color:#f92672>=</span>[alarm_name])
-
-    <span style=color:#66d9ef>if</span> response[<span style=color:#e6db74>&#39;MetricAlarms&#39;</span>] <span style=color:#f92672>and</span> response[<span style=color:#e6db74>&#39;MetricAlarms&#39;</span>][<span style=color:#ae81ff>0</span>][<span style=color:#e6db74>&#39;StateValue&#39;</span>] <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;ALARM&#34;</span>:
-        sns<span style=color:#f92672>.</span>publish(
-            TopicArn<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;arn:aws:sns:ap-northeast-1:&lt;ACCOUNT_ID&gt;:WebEnglishAlert-Level2&#34;</span>,
-            Subject<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;🚨 Cảnh báo leo thang&#34;</span>,
-            Message<span style=color:#f92672>=</span><span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Alarm </span><span style=color:#e6db74>{</span>alarm_name<span style=color:#e6db74>}</span><span style=color:#e6db74> vẫn chưa được xử lý. Đang leo thang lên cấp 2.&#34;</span>
-        )
-</code></pre></div><hr>
-<h3 id=43-deploy-lambda-function>4.3 Deploy Lambda Function</h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>zip <span style=color:#66d9ef>function</span>.zip alert_escalator.py
-
-aws lambda create-function <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --function-name alertEscalator <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --runtime python3.12 <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --role arn:aws:iam::&lt;ACCOUNT_ID&gt;:role/LambdaAlertEscalatorRole <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --handler alert_escalator.lambda_handler <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --zip-file fileb://function.zip <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --timeout <span style=color:#ae81ff>10</span>
-</code></pre></div><blockquote>
-<p>✅ Bạn có thể test thử bằng AWS Console → Lambda → Test
-<img src=../images/5.fwd/7.jpg alt=FWD></p>
-</blockquote>
-<hr>
-<h2 id=-5-tạo-alarm-gọi-lambda---level-2>📈 5. Tạo Alarm Gọi Lambda - Level 2</h2>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>aws cloudwatch put-metric-alarm <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --alarm-name CPU-High-Level2 <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --alarm-description <span style=color:#e6db74>&#34;Leo thang cảnh báo CPU cao&#34;</span> <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --metric-name cpu_usage_active <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --namespace WebEnglishMetrics <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --statistic Average <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --period <span style=color:#ae81ff>600</span> <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --evaluation-periods <span style=color:#ae81ff>2</span> <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --threshold <span style=color:#ae81ff>80</span> <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --comparison-operator GreaterThanThreshold <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --actions-enabled <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --alarm-actions arn:aws:lambda:ap-northeast-1:&lt;ACCOUNT_ID&gt;:function:alertEscalator
-</code></pre></div><hr>
-<h2 id=-tổng-quan-leo-thang>🔁 Tổng Quan Leo Thang</h2>
-<table>
-<thead>
-<tr>
-<th>Cấp</th>
-<th>Alarm</th>
-<th>Điều kiện</th>
-<th>Hành động</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>CPU-High-Level1</td>
-<td>1 × 5 phút > 80%</td>
-<td>Gửi SNS Level 1 → DevOps</td>
-</tr>
-<tr>
-<td>2</td>
-<td>CPU-High-Level2</td>
-<td>2 × 10 phút > 80%</td>
-<td>Gọi Lambda → gửi SNS Level 2 (gọi người trực hotline)</td>
-</tr>
-<tr>
-<td>3</td>
-<td>(tùy chọn mở rộng)</td>
-<td>Không xử lý sau 30p</td>
-<td>Gửi SNS Level 3 → quản lý cấp cao qua email/sms</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id=-6-cloudwatch-anomaly-detection-tùy-chọn-nâng-cao>📊 6. CloudWatch Anomaly Detection (Tùy chọn nâng cao)</h2>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>aws cloudwatch put-anomaly-detector <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --namespace WebEnglishMetrics <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --metric-name cpu_usage_active <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --statistic Average <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --dimensions Name<span style=color:#f92672>=</span>InstanceId,Value<span style=color:#f92672>=</span>i-xxxxxx
-</code></pre></div><p><img src=../images/5.fwd/8.jpg alt=FWD></p>
-<hr>
-<h2 id=-7-step-functions-tùy-chọn-tự-động-phản-hồi>🌀 7. Step Functions (Tùy chọn tự động phản hồi)</h2>
-<p>Sử dụng để:</p>
+<h2 id=using-aws-sdk-for-java>Using AWS SDK for Java</h2>
+<h3 id=objectives>Objectives</h3>
 <ul>
-<li>Scale ECS Service</li>
-<li>Reboot EC2 Instance</li>
-<li>Gửi chuỗi hành động khi phát hiện sự cố</li>
+<li>Write Java code to automatically control AWS resources such as creating Security Groups, setting up CloudWatch Alarms, and sending SNS notifications.</li>
+<li>Enhance automation and monitoring of AWS systems using Java applications.</li>
 </ul>
 <hr>
-<h2 id=-8-kiểm-thử-hệ-thống>🧪 8. Kiểm thử hệ thống</h2>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo yum install -y stress-ng
-stress-ng --cpu <span style=color:#ae81ff>4</span> --timeout 600s
-</code></pre></div><p>Bạn có thể gửi metric giả vào CloudWatch để test hệ thống hoạt động:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>aws cloudwatch put-metric-data <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --metric-name cpu_usage_active <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --namespace WebEnglishMetrics <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>  --value <span style=color:#ae81ff>90</span>
-</code></pre></div><p>Kiểm tra:</p>
+<h3 id=project-structure>Project Structure</h3>
 <ul>
-<li>SNS gửi đúng người?</li>
-<li>Lambda có được kích hoạt?</li>
-<li>Escalation có được thực hiện?</li>
-<li>Email xác nhận đã được nhấn chưa?</li>
+<li>Create a Maven project using AWS SDK for Java (version 2.x).</li>
+<li>Add necessary dependencies including:
+<ul>
+<li>EC2 client for managing Security Groups.</li>
+<li>CloudWatch client for creating and managing Alarms.</li>
+<li>SNS client for sending notifications when Alarms are triggered.</li>
+</ul>
+</li>
 </ul>
 <hr>
-<h2 id=-9-tổng-kết>📘 9. Tổng Kết</h2>
-<p>✅ Hệ thống cảnh báo nhiều cấp hoạt động chuẩn:</p>
+<h3 id=implementation-steps>Implementation Steps</h3>
+<ol>
+<li>
+<p><strong>Setup project and AWS SDK</strong></p>
+<h3 id=initialize-maven-project>Initialize Maven project.</h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>   &lt;project xmlns<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;http://maven.apache.org/POM/4.0.0&#34;</span> 
+           xmlns:xsi<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+           xsi:schemaLocation<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;http://maven.apache.org/POM/4.0.0 
+</span><span style=color:#e6db74>                               http://maven.apache.org/maven-v4_0_0.xsd&#34;</span>&gt;
+       &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+       &lt;groupId&gt;com.movie.aws&lt;/groupId&gt;
+       &lt;artifactId&gt;aws-networking&lt;/artifactId&gt;
+       &lt;version&gt;1.0&lt;/version&gt;
+
+       &lt;dependencyManagement&gt;
+           &lt;dependencies&gt;
+               &lt;dependency&gt;
+                   &lt;groupId&gt;software.amazon.awssdk&lt;/groupId&gt;
+                   &lt;artifactId&gt;bom&lt;/artifactId&gt;
+                   &lt;version&gt;2.25.24&lt;/version&gt;
+                   &lt;type&gt;pom&lt;/type&gt;
+                   &lt;scope&gt;import&lt;/scope&gt;
+               &lt;/dependency&gt;
+           &lt;/dependencies&gt;
+       &lt;/dependencyManagement&gt;
+
+       &lt;dependencies&gt;
+           &lt;dependency&gt;
+               &lt;groupId&gt;software.amazon.awssdk&lt;/groupId&gt;
+               &lt;artifactId&gt;ec2&lt;/artifactId&gt;
+           &lt;/dependency&gt;
+           &lt;dependency&gt;
+               &lt;groupId&gt;software.amazon.awssdk&lt;/groupId&gt;
+               &lt;artifactId&gt;cloudwatch&lt;/artifactId&gt;
+           &lt;/dependency&gt;
+           &lt;dependency&gt;
+               &lt;groupId&gt;software.amazon.awssdk&lt;/groupId&gt;
+               &lt;artifactId&gt;sns&lt;/artifactId&gt;
+           &lt;/dependency&gt;
+       &lt;/dependencies&gt;
+       &lt;build&gt;
+       &lt;plugins&gt;
+           &lt;plugin&gt;
+               &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+               &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+               &lt;version&gt;3.8.1&lt;/version&gt;
+               &lt;configuration&gt;
+                   &lt;source&gt;17&lt;/source&gt;
+                   &lt;target&gt;17&lt;/target&gt;
+               &lt;/configuration&gt;
+           &lt;/plugin&gt;
+       &lt;/plugins&gt;
+       &lt;/build&gt;
+   &lt;/project&gt;
+
+</code></pre></div><p><img src=../images/5.sdk/5.1.png alt=SDK>
+<img src=../images/5.sdk/5.2.png alt=SDK></p>
 <ul>
-<li>CloudWatch theo dõi & phát hiện bất thường</li>
-<li>SNS phân tầng cảnh báo đúng người</li>
-<li>Lambda phản ứng khi cảnh báo chưa được xử lý</li>
-<li>Mở rộng với Step Functions, PagerDuty, EC2 auto recovery&mldr;
-<img src=../images/5.fwd/9.jpg alt=FWD>
-<img src=../images/5.fwd/10.jpg alt=FWD></li>
+<li>Add AWS SDK dependency.</li>
+<li>Configure AWS credentials.</li>
 </ul>
-<hr>
-<h2 id=-gợi-ý-nâng-cao>🧩 Gợi ý nâng cao</h2>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>   package com.movie.aws;
+   import software.amazon.awssdk.services.ec2.Ec2Client;
+   import software.amazon.awssdk.services.ec2.model.*;
+   import software.amazon.awssdk.services.sns.SnsClient;
+   import software.amazon.awssdk.services.sns.model.*;
+   import software.amazon.awssdk.services.cloudwatch.CloudWatchClient;
+   import software.amazon.awssdk.services.cloudwatch.model.*;
+   import java.util.Scanner;
+
+ public class NetworkAutomationAllInOne <span style=color:#f92672>{</span>
+
+   public static void main<span style=color:#f92672>(</span>String<span style=color:#f92672>[]</span> args<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+       Scanner sc <span style=color:#f92672>=</span> new Scanner<span style=color:#f92672>(</span>System.in<span style=color:#f92672>)</span>;
+
+       System.out.print<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;Enter VPC ID: &#34;</span><span style=color:#f92672>)</span>;
+       String vpcId <span style=color:#f92672>=</span> sc.nextLine<span style=color:#f92672>()</span>;
+
+       System.out.print<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;Enter EC2 Instance ID to attach alarm: &#34;</span><span style=color:#f92672>)</span>;
+       String instanceId <span style=color:#f92672>=</span> sc.nextLine<span style=color:#f92672>()</span>;
+
+       System.out.print<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;Enter email for SNS alerts: &#34;</span><span style=color:#f92672>)</span>;
+       String email <span style=color:#f92672>=</span> sc.nextLine<span style=color:#f92672>()</span>;
+
+       try <span style=color:#f92672>(</span>Ec2Client ec2 <span style=color:#f92672>=</span> Ec2Client.create<span style=color:#f92672>()</span>;
+           SnsClient sns <span style=color:#f92672>=</span> SnsClient.create<span style=color:#f92672>()</span>;
+           CloudWatchClient cloudWatch <span style=color:#f92672>=</span> CloudWatchClient.create<span style=color:#f92672>())</span> <span style=color:#f92672>{</span>
+
+           String sgId <span style=color:#f92672>=</span> createSecurityGroup<span style=color:#f92672>(</span>ec2, vpcId<span style=color:#f92672>)</span>;
+           System.out.println<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;Security Group ID: &#34;</span> + sgId<span style=color:#f92672>)</span>;
+
+           String topicArn <span style=color:#f92672>=</span> createSnsTopic<span style=color:#f92672>(</span>sns, email<span style=color:#f92672>)</span>;
+           System.out.println<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;SNS Topic ARN: &#34;</span> + topicArn<span style=color:#f92672>)</span>;
+           System.out.println<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;Please confirm email before alarm becomes active.&#34;</span><span style=color:#f92672>)</span>;
+
+           createCloudWatchAlarm<span style=color:#f92672>(</span>cloudWatch, instanceId, topicArn<span style=color:#f92672>)</span>;
+           System.out.println<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;Complete! Network infrastructure + monitoring has been configured.&#34;</span><span style=color:#f92672>)</span>;
+       <span style=color:#f92672>}</span>
+   <span style=color:#f92672>}</span>
+
+   private static String createSecurityGroup<span style=color:#f92672>(</span>Ec2Client ec2, String vpcId<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+       CreateSecurityGroupResponse sgResponse <span style=color:#f92672>=</span> ec2.createSecurityGroup<span style=color:#f92672>(</span>
+               CreateSecurityGroupRequest.builder<span style=color:#f92672>()</span>
+                       .groupName<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;MovieWebSG&#34;</span><span style=color:#f92672>)</span>
+                       .description<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;SG for Movie Web Java App&#34;</span><span style=color:#f92672>)</span>
+                       .vpcId<span style=color:#f92672>(</span>vpcId<span style=color:#f92672>)</span>
+                       .build<span style=color:#f92672>()</span>
+       <span style=color:#f92672>)</span>;
+       String sgId <span style=color:#f92672>=</span> sgResponse.groupId<span style=color:#f92672>()</span>;
+
+       ec2.authorizeSecurityGroupIngress<span style=color:#f92672>(</span>AuthorizeSecurityGroupIngressRequest.builder<span style=color:#f92672>()</span>
+               .groupId<span style=color:#f92672>(</span>sgId<span style=color:#f92672>)</span>
+               .ipPermissions<span style=color:#f92672>(</span>
+                       IpPermission.builder<span style=color:#f92672>()</span>.ipProtocol<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;tcp&#34;</span><span style=color:#f92672>)</span>.fromPort<span style=color:#f92672>(</span>22<span style=color:#f92672>)</span>.toPort<span style=color:#f92672>(</span>22<span style=color:#f92672>)</span>
+                               .ipRanges<span style=color:#f92672>(</span>IpRange.builder<span style=color:#f92672>()</span>.cidrIp<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;0.0.0.0/0&#34;</span><span style=color:#f92672>)</span>.build<span style=color:#f92672>())</span>.build<span style=color:#f92672>()</span>,
+                       IpPermission.builder<span style=color:#f92672>()</span>.ipProtocol<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;tcp&#34;</span><span style=color:#f92672>)</span>.fromPort<span style=color:#f92672>(</span>80<span style=color:#f92672>)</span>.toPort<span style=color:#f92672>(</span>80<span style=color:#f92672>)</span>
+                               .ipRanges<span style=color:#f92672>(</span>IpRange.builder<span style=color:#f92672>()</span>.cidrIp<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;0.0.0.0/0&#34;</span><span style=color:#f92672>)</span>.build<span style=color:#f92672>())</span>.build<span style=color:#f92672>()</span>,
+                       IpPermission.builder<span style=color:#f92672>()</span>.ipProtocol<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;tcp&#34;</span><span style=color:#f92672>)</span>.fromPort<span style=color:#f92672>(</span>443<span style=color:#f92672>)</span>.toPort<span style=color:#f92672>(</span>443<span style=color:#f92672>)</span>
+                               .ipRanges<span style=color:#f92672>(</span>IpRange.builder<span style=color:#f92672>()</span>.cidrIp<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;0.0.0.0/0&#34;</span><span style=color:#f92672>)</span>.build<span style=color:#f92672>())</span>.build<span style=color:#f92672>()</span>,
+                       IpPermission.builder<span style=color:#f92672>()</span>.ipProtocol<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;tcp&#34;</span><span style=color:#f92672>)</span>.fromPort<span style=color:#f92672>(</span>3306<span style=color:#f92672>)</span>.toPort<span style=color:#f92672>(</span>3306<span style=color:#f92672>)</span>
+                               .ipRanges<span style=color:#f92672>(</span>IpRange.builder<span style=color:#f92672>()</span>.cidrIp<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;10.0.0.0/16&#34;</span><span style=color:#f92672>)</span>.build<span style=color:#f92672>())</span>.build<span style=color:#f92672>()</span>
+               <span style=color:#f92672>)</span>
+               .build<span style=color:#f92672>())</span>;
+
+       <span style=color:#66d9ef>return</span> sgId;
+   <span style=color:#f92672>}</span>
+
+   private static String createSnsTopic<span style=color:#f92672>(</span>SnsClient sns, String email<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+       CreateTopicResponse topicResponse <span style=color:#f92672>=</span> sns.createTopic<span style=color:#f92672>(</span>
+               CreateTopicRequest.builder<span style=color:#f92672>()</span>.name<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;HighCPUAlert&#34;</span><span style=color:#f92672>)</span>.build<span style=color:#f92672>()</span>
+       <span style=color:#f92672>)</span>;
+       String topicArn <span style=color:#f92672>=</span> topicResponse.topicArn<span style=color:#f92672>()</span>;
+
+       sns.subscribe<span style=color:#f92672>(</span>SubscribeRequest.builder<span style=color:#f92672>()</span>
+               .protocol<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;email&#34;</span><span style=color:#f92672>)</span>
+               .endpoint<span style=color:#f92672>(</span>email<span style=color:#f92672>)</span>
+               .topicArn<span style=color:#f92672>(</span>topicArn<span style=color:#f92672>)</span>
+               .build<span style=color:#f92672>())</span>;
+
+       <span style=color:#66d9ef>return</span> topicArn;
+   <span style=color:#f92672>}</span>
+
+   private static void createCloudWatchAlarm<span style=color:#f92672>(</span>CloudWatchClient cloudWatch, String instanceId, String topicArn<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+       PutMetricAlarmRequest alarmRequest <span style=color:#f92672>=</span> PutMetricAlarmRequest.builder<span style=color:#f92672>()</span>
+               .alarmName<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;HighCPU&#34;</span><span style=color:#f92672>)</span>
+               .comparisonOperator<span style=color:#f92672>(</span>ComparisonOperator.GREATER_THAN_THRESHOLD<span style=color:#f92672>)</span>
+               .evaluationPeriods<span style=color:#f92672>(</span>1<span style=color:#f92672>)</span>
+               .metricName<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;CPUUtilization&#34;</span><span style=color:#f92672>)</span>
+               .namespace<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;AWS/EC2&#34;</span><span style=color:#f92672>)</span>
+               .period<span style=color:#f92672>(</span>300<span style=color:#f92672>)</span>
+               .statistic<span style=color:#f92672>(</span>Statistic.AVERAGE<span style=color:#f92672>)</span>
+               .threshold<span style=color:#f92672>(</span>70.0<span style=color:#f92672>)</span>
+               .alarmDescription<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;Alarm when CPU &gt; 70%&#34;</span><span style=color:#f92672>)</span>
+               .dimensions<span style=color:#f92672>(</span>Dimension.builder<span style=color:#f92672>()</span>
+                       .name<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;InstanceId&#34;</span><span style=color:#f92672>)</span>
+                       .value<span style=color:#f92672>(</span>instanceId<span style=color:#f92672>)</span>
+                       .build<span style=color:#f92672>())</span>
+               .actionsEnabled<span style=color:#f92672>(</span>true<span style=color:#f92672>)</span>
+               .alarmActions<span style=color:#f92672>(</span>topicArn<span style=color:#f92672>)</span>
+               .unit<span style=color:#f92672>(</span>StandardUnit.PERCENT<span style=color:#f92672>)</span>
+               .build<span style=color:#f92672>()</span>;
+
+       cloudWatch.putMetricAlarm<span style=color:#f92672>(</span>alarmRequest<span style=color:#f92672>)</span>;
+   <span style=color:#f92672>}</span>
+ <span style=color:#f92672>}</span>
+</code></pre></div><ul>
+<li>Build and run Java</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>   mvn clean package
+   java -cp target/aws-networking-1.0.jar com.movie.aws.NetworkAutomationAllInOne
+</code></pre></div><ul>
+<li>When running, you enter:</li>
+</ul>
+<p>VPC ID (e.g.: vpc-0a1b2c3d4e5f6g7h)</p>
+<p>EC2 Instance ID to attach alarm</p>
+<p>Email for alerts → AWS SNS will send confirmation email → click link in email to confirm.
+<img src=../images/5.sdk/5.3.png alt=SDK>
+<img src=../images/5.sdk/5.4.png alt=SDK>
+<img src=../images/5.sdk/5.5.png alt=SDK></p>
+</li>
+<li>
+<p><strong>Create Security Group</strong></p>
 <ul>
-<li>Dùng <strong>CloudFormation / CDK</strong> để mã hóa toàn bộ hạ tầng này</li>
-<li>Ghi log vào <strong>CloudWatch Logs</strong> để tracking escalation</li>
-<li>Tạo <strong>Dead Letter Queue</strong> cho Lambda nếu bị lỗi</li>
+<li>Use SDK to create Security Group in VPC.</li>
+<li>Define rules for opening ports (e.g., SSH, HTTP).
+<img src=../images/5.sdk/5.6.png alt=SDK></li>
+</ul>
+</li>
+<li>
+<p><strong>Create CloudWatch Alarm</strong></p>
+<ul>
+<li>Define Alarm to monitor metrics like EC2 CPU Utilization.</li>
+<li>Set alert thresholds and actions when Alarm triggers.
+<img src=../images/5.sdk/5.7.png alt=SDK>
+<img src=../images/5.sdk/5.8.png alt=SDK></li>
+</ul>
+</li>
+<li>
+<p><strong>Send notifications via SNS when Alarm triggers</strong></p>
+<ul>
+<li>Create and configure SNS topic.</li>
+<li>Register subscribers (email, SMS, Lambda).</li>
+<li>Link SNS topic with Alarm to send automatic notifications.
+<img src=../images/5.sdk/5.9.png alt=SDK>
+<img src=../images/5.sdk/5.10.png alt=SDK></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id=results>Results</h3>
+<ul>
+<li>Java code can automatically create and manage network resources and monitoring.</li>
+<li>Automatically send alerts when incidents occur or monitoring conditions exceed thresholds.</li>
+<li>Increase operational efficiency and reduce manual errors in AWS infrastructure management.</li>
 </ul>
 <hr>
 <footer class=footline>
@@ -433,25 +421,25 @@ stress-ng --cpu <span style=color:#ae81ff>4</span> --timeout 600s
 </div>
 </div>
 <div id=navigation>
-<a class="nav nav-prev" href=../4-cloudformation/ title="Triển khai Tính năng Cảnh Báo và Phản Hồi Tự Động cho WebEnglish"> <i class="fa fa-chevron-left"></i></a>
-<a class="nav nav-next" href=../6-cleanup/ title="Clean Up Resources" style=margin-right:0><i class="fa fa-chevron-right"></i></a>
+<a class="nav nav-prev" href=../4-cloudformation/ title="Deploy AWS Network with CloudFormation (IaC)"> <i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-next" href=../6-cleanup/ title="Resource Cleanup" style=margin-right:0><i class="fa fa-chevron-right"></i></a>
 </div>
 </section>
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=../js/clipboard.min.js?1754929205></script>
-<script src=../js/perfect-scrollbar.min.js?1754929205></script>
-<script src=../js/perfect-scrollbar.jquery.min.js?1754929205></script>
-<script src=../js/jquery.sticky.js?1754929205></script>
-<script src=../js/featherlight.min.js?1754929205></script>
-<script src=../js/highlight.pack.js?1754929205></script>
+<script src=../js/clipboard.min.js?1754930965></script>
+<script src=../js/perfect-scrollbar.min.js?1754930965></script>
+<script src=../js/perfect-scrollbar.jquery.min.js?1754930965></script>
+<script src=../js/jquery.sticky.js?1754930965></script>
+<script src=../js/featherlight.min.js?1754930965></script>
+<script src=../js/highlight.pack.js?1754930965></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=../js/modernizr.custom-3.6.0.js?1754929205></script>
-<script src=../js/learn.js?1754929205></script>
-<script src=../js/hugo-learn.js?1754929205></script>
-<link href=../mermaid/mermaid.css?1754929205 rel=stylesheet>
-<script src=../mermaid/mermaid.js?1754929205></script>
+<script src=../js/modernizr.custom-3.6.0.js?1754930965></script>
+<script src=../js/learn.js?1754930965></script>
+<script src=../js/hugo-learn.js?1754930965></script>
+<link href=../mermaid/mermaid.css?1754930965 rel=stylesheet>
+<script src=../mermaid/mermaid.js?1754930965></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 <script>(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-158079754-2','auto'),ga('send','pageview')</script>
 </body>

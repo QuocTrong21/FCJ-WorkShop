@@ -6,18 +6,18 @@
 <meta name=description content>
 <meta name=author content="journeyoftheaverageguy@gmail.com">
 <link rel=icon href=../../images/favicon.png type=image/png>
-<title>Triển Khai Docker Image Lên AWS ECR Trên Linux :: AWS System Manager</title>
-<link href=../../css/nucleus.css?1754929205 rel=stylesheet>
-<link href=../../css/fontawesome-all.min.css?1754929205 rel=stylesheet>
-<link href=../../css/hybrid.css?1754929205 rel=stylesheet>
-<link href=../../css/featherlight.min.css?1754929205 rel=stylesheet>
-<link href=../../css/perfect-scrollbar.min.css?1754929205 rel=stylesheet>
-<link href=../../css/auto-complete.css?1754929205 rel=stylesheet>
-<link href=../../css/atom-one-dark-reasonable.css?1754929205 rel=stylesheet>
-<link href=../../css/theme.css?1754929205 rel=stylesheet>
-<link href=../../css/hugo-theme.css?1754929205 rel=stylesheet>
-<link href=../../css/theme-workshop.css?1754929205 rel=stylesheet>
-<script src=../../js/jquery-3.3.1.min.js?1754929205></script>
+<title>Guide to Creating an EC2 Instance on AWS :: AWS System Manager</title>
+<link href=../../css/nucleus.css?1754930965 rel=stylesheet>
+<link href=../../css/fontawesome-all.min.css?1754930965 rel=stylesheet>
+<link href=../../css/hybrid.css?1754930965 rel=stylesheet>
+<link href=../../css/featherlight.min.css?1754930965 rel=stylesheet>
+<link href=../../css/perfect-scrollbar.min.css?1754930965 rel=stylesheet>
+<link href=../../css/auto-complete.css?1754930965 rel=stylesheet>
+<link href=../../css/atom-one-dark-reasonable.css?1754930965 rel=stylesheet>
+<link href=../../css/theme.css?1754930965 rel=stylesheet>
+<link href=../../css/hugo-theme.css?1754930965 rel=stylesheet>
+<link href=../../css/theme-workshop.css?1754930965 rel=stylesheet>
+<script src=../../js/jquery-3.3.1.min.js?1754930965></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
 </head>
 <body data-url=../../2-prerequiste/2.1.2-createec2/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=../../js/lunr.min.js?1754929205></script>
-<script type=text/javascript src=../../js/auto-complete.js?1754929205></script>
-<script type=text/javascript>var baseurl="https://QuocTrong21.github.io/FCJ-WorkShop/"</script>
-<script type=text/javascript src=../../js/search.js?1754929205></script>
+<script type=text/javascript src=../../js/lunr.min.js?1754930965></script>
+<script type=text/javascript src=../../js/auto-complete.js?1754930965></script>
+<script type=text/javascript>var baseurl="https://QuocTrong21.github.io/FCJ-Workshop/"</script>
+<script type=text/javascript src=../../js/search.js?1754930965></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -52,43 +52,43 @@ parent">
 <i class="fas fa-check read-icon"></i>
 </a>
 <ul>
-<li data-nav-id=/2-prerequiste/2.1.1-createiam/ title="🖥️ Hướng Dẫn Tạo EC2 Instance Trên AWS" class=dd-item>
+<li data-nav-id=/2-prerequiste/2.1.1-createiam/ title="Create IAM User and Obtain Access Key, Secret Access Key, Public Key" class=dd-item>
 <a href=../../2-prerequiste/2.1.1-createiam/>
-<b> 2.1.2 </b> 🖥️ Hướng Dẫn Tạo EC2 Instance Trên AWS
+<b> 2.1.1 </b> Create IAM User and Obtain Access Key, Secret Access Key, Public Key
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
-<li data-nav-id=/2-prerequiste/2.1.2-createec2/ title="Triển Khai Docker Image Lên AWS ECR Trên Linux " class="dd-item
+<li data-nav-id=/2-prerequiste/2.1.2-createec2/ title="Guide to Creating an EC2 Instance on AWS" class="dd-item
 parent
 active">
 <a href=../../2-prerequiste/2.1.2-createec2/>
-<b> 2.1.2 </b> Triển Khai Docker Image Lên AWS ECR Trên Linux
+<b> 2.1.2 </b> Guide to Creating an EC2 Instance on AWS
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
 </ul>
 </li>
-<li data-nav-id=/3-awscli/ title="Connect to EC2 servers" class=dd-item>
+<li data-nav-id=/3-awscli/ title="Automation with AWS CLI" class=dd-item>
 <a href=../../3-awscli/>
-<b> 3. </b> Connect to EC2 servers
+<b> 3. </b> Automation with AWS CLI
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
-<li data-nav-id=/4-cloudformation/ title="Triển khai Tính năng Cảnh Báo và Phản Hồi Tự Động cho WebEnglish" class=dd-item>
+<li data-nav-id=/4-cloudformation/ title="Deploy AWS Network with CloudFormation (IaC)" class=dd-item>
 <a href=../../4-cloudformation/>
-<b> 4. </b> Triển khai Tính năng Cảnh Báo và Phản Hồi Tự Động cho WebEnglish
+<b> 4. </b> Deploy AWS Network with CloudFormation (IaC)
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
-<li data-nav-id=/5-java-sdk/ title="Automated Response" class=dd-item>
+<li data-nav-id=/5-java-sdk/ title="Using AWS SDK for Java to Control AWS" class=dd-item>
 <a href=../../5-java-sdk/>
-<b> 5. </b> Automated Response
+<b> 5. </b> Using AWS SDK for Java to Control AWS
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
-<li data-nav-id=/6-cleanup/ title="Clean Up Resources" class=dd-item>
+<li data-nav-id=/6-cleanup/ title="Resource Cleanup" class=dd-item>
 <a href=../../6-cleanup/>
-<b>11. </b>Clean Up Resources
+<b> 6. </b> Resource Cleanup
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
@@ -108,7 +108,7 @@ active">
 <a class=padding>
 <i class="fas fa-language fa-fw"></i>
 <div class=select-style>
-<select id=select-language onchange="location=this.value"><option id=en value=https://QuocTrong21.github.io/FCJ-WorkShop/2-prerequiste/2.1.2-createec2/ selected>English</option><option id=vi value=https://QuocTrong21.github.io/FCJ-WorkShop/vi/2-prerequiste/2.1.2-createec2/>Tiếng Việt</option></select><svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="255" height="255" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255"><g><g id="arrow-drop-down"><polygon points="0,63.75 127.5,191.25 255,63.75"/></g></g></svg>
+<select id=select-language onchange="location=this.value"><option id=en value=https://QuocTrong21.github.io/FCJ-Workshop/2-prerequiste/2.1.2-createec2/ selected>English</option><option id=vi value=https://QuocTrong21.github.io/FCJ-Workshop/vi/2-prerequiste/2.1.2-createec2/>Tiếng Việt</option></select><svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="255" height="255" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255"><g><g id="arrow-drop-down"><polygon points="0,63.75 127.5,191.25 255,63.75"/></g></g></svg>
 </div>
 </a>
 </li>
@@ -154,30 +154,22 @@ active">
 </span>
 <span id=toc-menu><i class="fas fa-list-alt"></i></span>
 <span class=links>
-<a href=../../>Session Management</a> > <a href=../../2-prerequiste/>Steps to Prepare the Environment for Network Automation on AWS</a> > Triển Khai Docker Image Lên AWS ECR Trên Linux
+<a href=../../>Overview – Network Automation with AWS CLI, AWS SDK (Java), and CloudFormation</a> > <a href=../../2-prerequiste/>Steps to Prepare the Environment for Network Automation on AWS</a> > Guide to Creating an EC2 Instance on AWS
 </span>
 </div>
 <div class=progress>
 <div class=wrapper>
 <nav id=TableOfContents>
 <ul>
-<li><a href=#-mục-tiêu>🎯 Mục Tiêu</a></li>
-<li><a href=#-1-cài-đặt-aws-cli-trên-linux>🧰 1. Cài Đặt AWS CLI Trên Linux</a></li>
-<li><a href=#-2-cấu-hình-aws-cli>⚙️ 2. Cấu Hình AWS CLI</a></li>
-<li><a href=#-3-tạo-ecr-repository-trên-aws-console>📦 3. Tạo ECR Repository Trên AWS Console</a></li>
-<li><a href=#-4-xây-dựng-docker-image-ứng-dụng>🏗 4. Xây Dựng Docker Image Ứng Dụng</a></li>
-<li><a href=#-5-đăng-nhập-vào-amazon-ecr>🔐 5. Đăng Nhập Vào Amazon ECR</a></li>
-<li><a href=#-6-tag-docker-image-với-ecr-uri>🏷 6. Tag Docker Image Với ECR URI</a></li>
-<li><a href=#-7-push-docker-image-lên-ecr>🚀 7. Push Docker Image Lên ECR</a></li>
-<li><a href=#-8-đẩy-image-mysql-80-lên-ecr-tuỳ-chọn>🐬 8. Đẩy Image MySQL 8.0 Lên ECR (Tuỳ chọn)</a>
+<li><a href=#-objective>📌 Objective</a></li>
+<li><a href=#-prerequisites>🧰 Prerequisites</a></li>
+<li><a href=#-steps-to-follow>🛠️ Steps to Follow</a>
 <ul>
-<li><a href=#-gắn-tag-mysql-image>✅ Gắn tag MySQL image</a></li>
-<li><a href=#-push-mysql-image-lên-ecr>✅ Push MySQL image lên ECR</a></li>
+<li><a href=#1-log-in-to-aws-console>1. Log in to AWS Console</a></li>
+<li><a href=#2-create-ec2-instance>2. Create EC2 Instance</a></li>
 </ul>
 </li>
-<li><a href=#-9-kiểm-tra-trên-aws-console>📋 9. Kiểm Tra Trên AWS Console</a></li>
-<li><a href=#-10-lưu-ý-bổ-sung>📝 10. Lưu Ý Bổ Sung</a></li>
-<li><a href=#-11-tài-liệu-tham-khảo>📚 11. Tài Liệu Tham Khảo</a></li>
+<li><a href=#-3-install-aws-cli-on-linux>🧰 3. Install AWS CLI on Linux</a></li>
 </ul>
 </nav>
 </div>
@@ -188,147 +180,79 @@ active">
 </div>
 <div id=body-inner>
 <h1>
-Triển Khai Docker Image Lên AWS ECR Trên Linux
+Guide to Creating an EC2 Instance on AWS
 </h1>
-<h2 id=-mục-tiêu>🎯 Mục Tiêu</h2>
-<p>Hướng dẫn cài đặt AWS CLI, cấu hình tài khoản AWS, tạo repository trên Amazon ECR, và đẩy Docker image từ máy local (bao gồm cả image MySQL) lên ECR.</p>
-<hr>
-<h2 id=-1-cài-đặt-aws-cli-trên-linux>🧰 1. Cài Đặt AWS CLI Trên Linux</h2>
-<p>Chạy các lệnh sau để cài đặt AWS CLI v2:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># Tải AWS CLI v2</span>
+<h2 id=-objective>📌 Objective</h2>
+<p>Create an EC2 instance using default configuration to deploy applications or test the environment.</p>
+<h2 id=-prerequisites>🧰 Prerequisites</h2>
+<ul>
+<li>Valid AWS account</li>
+<li>Logged into AWS Console or have AWS CLI installed</li>
+<li>Created a key pair for SSH (if needed)</li>
+</ul>
+<h2 id=-steps-to-follow>🛠️ Steps to Follow</h2>
+<h3 id=1-log-in-to-aws-console>1. Log in to AWS Console</h3>
+<p>Visit: <a href=https://console.aws.amazon.com/ec2/>https://console.aws.amazon.com/ec2/</a></p>
+<h3 id=2-create-ec2-instance>2. Create EC2 Instance</h3>
+<h4 id=method-1-using-aws-console>Method 1: Using AWS Console</h4>
+<ol>
+<li>Go to <strong>EC2 Dashboard</strong></li>
+<li>Click <strong>Launch Instance</strong></li>
+<li>Enter a name: <code>workshop</code></li>
+<li><strong>Select AMI</strong>: <code>Amazon Linux 2023</code> (or Amazon Linux 2)</li>
+<li><strong>Instance Type</strong>: <code>t2.micro</code> (Free tier eligible)</li>
+<li><strong>Key pair</strong>: Choose or create a new one</li>
+<li><strong>Network Settings</strong>:
+<ul>
+<li>Allow SSH (port 22)</li>
+<li>Allow HTTP (port 80) if needed</li>
+</ul>
+</li>
+<li><strong>Storage</strong>: Default 8 GB (gp2)</li>
+<li>Click <strong>Launch Instance</strong><br>
+<img src=../../images/2.prerequisite/12-1.jpg alt=VPC><br>
+<img src=../../images/2.prerequisite/2.3.png alt=VPC><br>
+<img src=../../images/2.prerequisite/2.4.png alt=VPC><br>
+<img src=../../images/2.prerequisite/2.5.png alt=VPC></li>
+</ol>
+<h2 id=-3-install-aws-cli-on-linux>🧰 3. Install AWS CLI on Linux</h2>
+<p>Run the following commands to install AWS CLI v2:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># Download AWS CLI v2</span>
 curl <span style=color:#e6db74>&#34;https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip&#34;</span> -o <span style=color:#e6db74>&#34;awscliv2.zip&#34;</span>
 
-<span style=color:#75715e># Giải nén</span>
+<span style=color:#75715e># Unzip the installer</span>
 unzip awscliv2.zip
 
-<span style=color:#75715e># Cài đặt</span>
+<span style=color:#75715e># Install</span>
 sudo ./aws/install
 
-<span style=color:#75715e># Kiểm tra phiên bản</span>
+<span style=color:#75715e># Check version</span>
 aws --version
-</code></pre></div><p><img src=../../images/2.prerequisite/12-30.jpg alt=VPC>
-<img src=../../images/2.prerequisite/12-31.jpg alt=VPC></p>
-<hr>
-<h2 id=-2-cấu-hình-aws-cli>⚙️ 2. Cấu Hình AWS CLI</h2>
-<p>Sau khi cài đặt, chạy lệnh sau để cấu hình thông tin tài khoản:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>aws configure
-</code></pre></div><p><img src=../../images/2.prerequisite/12-33.jpg alt=VPC>
-<img src=../../images/2.prerequisite/12-34.jpg alt=VPC>
-Nhập các thông tin:</p>
-<ul>
-<li><code>AWS Access Key ID</code>: từ IAM user</li>
-<li><code>AWS Secret Access Key</code>: từ IAM user</li>
-<li><code>Default region name</code>: <code>ap-northeast-1</code> (hoặc vùng bạn sử dụng)</li>
-<li><code>Default output format</code>: <code>json</code></li>
-</ul>
-<hr>
-<p><img src=../../images/2.prerequisite/12-35.jpg alt=VPC></p>
-<h2 id=-3-tạo-ecr-repository-trên-aws-console>📦 3. Tạo ECR Repository Trên AWS Console</h2>
-<ol>
-<li>Truy cập: <a href=https://console.aws.amazon.com/ecr>https://console.aws.amazon.com/ecr</a></li>
-<li>Chọn <strong>Repositories</strong> → <strong>Create repository</strong></li>
-<li>Nhập tên repository: <code>webenglish</code></li>
-<li>Chọn <strong>Private</strong>, giữ thiết lập mặc định</li>
-<li>Nhấn <strong>Create repository</strong></li>
-</ol>
-<p><img src=../../images/2.prerequisite/12-36.jpg alt=VPC>
-<img src=../../images/2.prerequisite/12-37.jpg alt=VPC></p>
-<p>Bạn sẽ nhận được URI như sau:</p>
-<pre tabindex=0><code>466322313916.dkr.ecr.ap-northeast-1.amazonaws.com/webenglish
-</code></pre><hr>
-<h2 id=-4-xây-dựng-docker-image-ứng-dụng>🏗 4. Xây Dựng Docker Image Ứng Dụng</h2>
-<p>Di chuyển đến thư mục có <code>Dockerfile</code> và build image:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>docker build -t webenglish-app .
-</code></pre></div><hr>
-<h2 id=-5-đăng-nhập-vào-amazon-ecr>🔐 5. Đăng Nhập Vào Amazon ECR</h2>
-<p>Trước khi push, bạn cần đăng nhập vào ECR:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>aws ecr get-login-password --region ap-northeast-1 | <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>docker login --username AWS <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>--password-stdin 466322313916.dkr.ecr.ap-northeast-1.amazonaws.com
-</code></pre></div><p><img src=../../images/2.prerequisite/12-38.jpg alt=VPC></p>
-<hr>
-<h2 id=-6-tag-docker-image-với-ecr-uri>🏷 6. Tag Docker Image Với ECR URI</h2>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>docker tag webenglish-app:latest <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>466322313916.dkr.ecr.ap-northeast-1.amazonaws.com/webenglish:webenglish-app
-</code></pre></div><p><img src=../../images/2.prerequisite/12-39.jpg alt=VPC></p>
-<hr>
-<h2 id=-7-push-docker-image-lên-ecr>🚀 7. Push Docker Image Lên ECR</h2>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>docker push <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>466322313916.dkr.ecr.ap-northeast-1.amazonaws.com/webenglish:webenglish-app
-</code></pre></div><p><img src=../../images/2.prerequisite/12-40.jpg alt=VPC></p>
-<hr>
-<h2 id=-8-đẩy-image-mysql-80-lên-ecr-tuỳ-chọn>🐬 8. Đẩy Image MySQL 8.0 Lên ECR (Tuỳ chọn)</h2>
-<p>Nếu bạn đã pull/build image MySQL <code>8.0</code> và image ID là <code>7d4e34ccfad4</code>, bạn có thể tag và push như sau:</p>
-<h3 id=-gắn-tag-mysql-image>✅ Gắn tag MySQL image</h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>docker tag 7d4e34ccfad4 <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>466322313916.dkr.ecr.ap-northeast-1.amazonaws.com/webenglish:mysql-8.0
-</code></pre></div><p><img src=../../images/2.prerequisite/12-41.jpg alt=VPC></p>
-<p>📌 <strong>Lưu ý</strong>: Bạn có thể thay <code>mysql-8.0</code> bằng <code>latest</code> nếu muốn.</p>
-<h3 id=-push-mysql-image-lên-ecr>✅ Push MySQL image lên ECR</h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>docker push <span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>466322313916.dkr.ecr.ap-northeast-1.amazonaws.com/webenglish:mysql-8.0
-</code></pre></div><p><img src=../../images/2.prerequisite/12-42.jpg alt=VPC></p>
-<p>⏳ Kích thước image MySQL khoảng 772MB — quá trình push có thể mất vài phút.</p>
-<hr>
-<h2 id=-9-kiểm-tra-trên-aws-console>📋 9. Kiểm Tra Trên AWS Console</h2>
-<p>Sau khi push xong:</p>
-<ul>
-<li>Truy cập lại AWS Console → ECR</li>
-<li>Vào repository <code>webenglish</code></li>
-<li>Xác minh đã có các image với tag: <code>webenglish-app</code>, <code>mysql-8.0</code>, v.v.</li>
-</ul>
-<p><img src=../../images/2.prerequisite/12-43.jpg alt=VPC></p>
-<hr>
-<h2 id=-10-lưu-ý-bổ-sung>📝 10. Lưu Ý Bổ Sung</h2>
-<ul>
-<li>Docker cần được cài đặt và chạy:
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo systemctl start docker
-</code></pre></div></li>
-<li>Tài khoản IAM phải có quyền:
-<ul>
-<li><code>AmazonEC2ContainerRegistryFullAccess</code></li>
-</ul>
-</li>
-<li>Bạn có thể sử dụng image từ ECR để triển khai container trên:
-<ul>
-<li>EC2</li>
-<li>ECS</li>
-<li>EKS</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id=-11-tài-liệu-tham-khảo>📚 11. Tài Liệu Tham Khảo</h2>
-<ul>
-<li><a href=https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html>AWS CLI Install Guide</a></li>
-<li><a href=https://docs.aws.amazon.com/AmazonECR/latest/userguide/what-is-ecr.html>Amazon ECR Documentation</a></li>
-<li><a href=https://docs.docker.com/engine/reference/commandline/cli/>Docker CLI Docs</a></li>
-</ul>
-<hr>
+</code></pre></div>
 <footer class=footline>
 </footer>
 </div>
 </div>
 <div id=navigation>
-<a class="nav nav-prev" href=../../2-prerequiste/2.1.1-createiam/ title="🖥️ Hướng Dẫn Tạo EC2 Instance Trên AWS"> <i class="fa fa-chevron-left"></i></a>
-<a class="nav nav-next" href=../../3-awscli/ title="Connect to EC2 servers" style=margin-right:0><i class="fa fa-chevron-right"></i></a>
+<a class="nav nav-prev" href=../../2-prerequiste/2.1.1-createiam/ title="Create IAM User and Obtain Access Key, Secret Access Key, Public Key"> <i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-next" href=../../3-awscli/ title="Automation with AWS CLI" style=margin-right:0><i class="fa fa-chevron-right"></i></a>
 </div>
 </section>
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=../../js/clipboard.min.js?1754929205></script>
-<script src=../../js/perfect-scrollbar.min.js?1754929205></script>
-<script src=../../js/perfect-scrollbar.jquery.min.js?1754929205></script>
-<script src=../../js/jquery.sticky.js?1754929205></script>
-<script src=../../js/featherlight.min.js?1754929205></script>
-<script src=../../js/highlight.pack.js?1754929205></script>
+<script src=../../js/clipboard.min.js?1754930965></script>
+<script src=../../js/perfect-scrollbar.min.js?1754930965></script>
+<script src=../../js/perfect-scrollbar.jquery.min.js?1754930965></script>
+<script src=../../js/jquery.sticky.js?1754930965></script>
+<script src=../../js/featherlight.min.js?1754930965></script>
+<script src=../../js/highlight.pack.js?1754930965></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=../../js/modernizr.custom-3.6.0.js?1754929205></script>
-<script src=../../js/learn.js?1754929205></script>
-<script src=../../js/hugo-learn.js?1754929205></script>
-<link href=../../mermaid/mermaid.css?1754929205 rel=stylesheet>
-<script src=../../mermaid/mermaid.js?1754929205></script>
+<script src=../../js/modernizr.custom-3.6.0.js?1754930965></script>
+<script src=../../js/learn.js?1754930965></script>
+<script src=../../js/hugo-learn.js?1754930965></script>
+<link href=../../mermaid/mermaid.css?1754930965 rel=stylesheet>
+<script src=../../mermaid/mermaid.js?1754930965></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 <script>(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-158079754-2','auto'),ga('send','pageview')</script>
 </body>
