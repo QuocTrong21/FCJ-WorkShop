@@ -7,17 +7,17 @@
 <meta name=author content="journeyoftheaverageguy@gmail.com">
 <link rel=icon href=../../images/favicon.png type=image/png>
 <title>🖥️ Hướng Dẫn Tạo EC2 Instance Trên AWS :: AWS System Manager</title>
-<link href=../../css/nucleus.css?1754928610 rel=stylesheet>
-<link href=../../css/fontawesome-all.min.css?1754928610 rel=stylesheet>
-<link href=../../css/hybrid.css?1754928610 rel=stylesheet>
-<link href=../../css/featherlight.min.css?1754928610 rel=stylesheet>
-<link href=../../css/perfect-scrollbar.min.css?1754928610 rel=stylesheet>
-<link href=../../css/auto-complete.css?1754928610 rel=stylesheet>
-<link href=../../css/atom-one-dark-reasonable.css?1754928610 rel=stylesheet>
-<link href=../../css/theme.css?1754928610 rel=stylesheet>
-<link href=../../css/hugo-theme.css?1754928610 rel=stylesheet>
-<link href=../../css/theme-workshop.css?1754928610 rel=stylesheet>
-<script src=../../js/jquery-3.3.1.min.js?1754928610></script>
+<link href=../../css/nucleus.css?1754929052 rel=stylesheet>
+<link href=../../css/fontawesome-all.min.css?1754929052 rel=stylesheet>
+<link href=../../css/hybrid.css?1754929052 rel=stylesheet>
+<link href=../../css/featherlight.min.css?1754929052 rel=stylesheet>
+<link href=../../css/perfect-scrollbar.min.css?1754929052 rel=stylesheet>
+<link href=../../css/auto-complete.css?1754929052 rel=stylesheet>
+<link href=../../css/atom-one-dark-reasonable.css?1754929052 rel=stylesheet>
+<link href=../../css/theme.css?1754929052 rel=stylesheet>
+<link href=../../css/hugo-theme.css?1754929052 rel=stylesheet>
+<link href=../../css/theme-workshop.css?1754929052 rel=stylesheet>
+<script src=../../js/jquery-3.3.1.min.js?1754929052></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
 </head>
 <body data-url=../../2-prerequiste/2.1.1-createiam/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=../../js/lunr.min.js?1754928610></script>
-<script type=text/javascript src=../../js/auto-complete.js?1754928610></script>
+<script type=text/javascript src=../../js/lunr.min.js?1754929052></script>
+<script type=text/javascript src=../../js/auto-complete.js?1754929052></script>
 <script type=text/javascript>var baseurl="https://QuocTrong21.github.io/FCJ-Workshop/"</script>
-<script type=text/javascript src=../../js/search.js?1754928610></script>
+<script type=text/javascript src=../../js/search.js?1754929052></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -60,9 +60,9 @@ active">
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
-<li data-nav-id=/2-prerequiste/2.1.2-createec2/ title="Create Public Subnet" class=dd-item>
+<li data-nav-id=/2-prerequiste/2.1.2-createec2/ title="Triển Khai Docker Image Lên AWS ECR Trên Linux " class=dd-item>
 <a href=../../2-prerequiste/2.1.2-createec2/>
-<b> 2.1.2 </b> Create Public Subnet
+<b> 2.1.2 </b> Triển Khai Docker Image Lên AWS ECR Trên Linux
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
@@ -74,15 +74,15 @@ active">
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
-<li data-nav-id=/4-cloudformation/ title="Manage session logs" class=dd-item>
+<li data-nav-id=/4-cloudformation/ title="Triển khai Tính năng Cảnh Báo và Phản Hồi Tự Động cho WebEnglish" class=dd-item>
 <a href=../../4-cloudformation/>
-<b> 4. </b> Manage session logs
+<b> 4. </b> Triển khai Tính năng Cảnh Báo và Phản Hồi Tự Động cho WebEnglish
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
-<li data-nav-id=/5-java-sdk/ title="Port Forwarding" class=dd-item>
+<li data-nav-id=/5-java-sdk/ title="Automated Response" class=dd-item>
 <a href=../../5-java-sdk/>
-<b> 5. </b> Port Forwarding
+<b> 5. </b> Automated Response
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
@@ -191,7 +191,8 @@ active">
 <ul>
 <li>Tài khoản AWS hợp lệ</li>
 <li>Đăng nhập AWS Console hoặc cài sẵn AWS CLI</li>
-<li>Tạo key pair để SSH (nếu cần)</li>
+<li>Tạo key pair để SSH (nếu cần)
+c</li>
 </ul>
 <h2 id=-các-bước-thực-hiện>🛠️ Các Bước Thực Hiện</h2>
 <h3 id=1-đăng-nhập-aws-console>1. Đăng Nhập AWS Console</h3>
@@ -252,24 +253,24 @@ active">
 </div>
 <div id=navigation>
 <a class="nav nav-prev" href=../../2-prerequiste/ title="Steps to Prepare the Environment for Network Automation on AWS"> <i class="fa fa-chevron-left"></i></a>
-<a class="nav nav-next" href=../../2-prerequiste/2.1.2-createec2/ title="Create Public Subnet" style=margin-right:0><i class="fa fa-chevron-right"></i></a>
+<a class="nav nav-next" href=../../2-prerequiste/2.1.2-createec2/ title="Triển Khai Docker Image Lên AWS ECR Trên Linux " style=margin-right:0><i class="fa fa-chevron-right"></i></a>
 </div>
 </section>
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=../../js/clipboard.min.js?1754928610></script>
-<script src=../../js/perfect-scrollbar.min.js?1754928610></script>
-<script src=../../js/perfect-scrollbar.jquery.min.js?1754928610></script>
-<script src=../../js/jquery.sticky.js?1754928610></script>
-<script src=../../js/featherlight.min.js?1754928610></script>
-<script src=../../js/highlight.pack.js?1754928610></script>
+<script src=../../js/clipboard.min.js?1754929052></script>
+<script src=../../js/perfect-scrollbar.min.js?1754929052></script>
+<script src=../../js/perfect-scrollbar.jquery.min.js?1754929052></script>
+<script src=../../js/jquery.sticky.js?1754929052></script>
+<script src=../../js/featherlight.min.js?1754929052></script>
+<script src=../../js/highlight.pack.js?1754929052></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=../../js/modernizr.custom-3.6.0.js?1754928610></script>
-<script src=../../js/learn.js?1754928610></script>
-<script src=../../js/hugo-learn.js?1754928610></script>
-<link href=../../mermaid/mermaid.css?1754928610 rel=stylesheet>
-<script src=../../mermaid/mermaid.js?1754928610></script>
+<script src=../../js/modernizr.custom-3.6.0.js?1754929052></script>
+<script src=../../js/learn.js?1754929052></script>
+<script src=../../js/hugo-learn.js?1754929052></script>
+<link href=../../mermaid/mermaid.css?1754929052 rel=stylesheet>
+<script src=../../mermaid/mermaid.js?1754929052></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 <script>(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-158079754-2','auto'),ga('send','pageview')</script>
 </body>

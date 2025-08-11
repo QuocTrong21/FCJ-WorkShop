@@ -1,98 +1,181 @@
 ---
-title : "Create Public Subnet"
-date : "`r Sys.Date()`"
-weight : 2
+title : "Triển Khai Docker Image Lên AWS ECR Trên Linux "
+date :  "`r Sys.Date()`" 
+weight : 3
 chapter : false
 pre : " <b> 2.1.2 </b> "
 ---
 
-#### Create Public Subnet
 
-1. Click **Subnets**.
-  + Click **Create subnet**.
+## 🎯 Mục Tiêu
 
-![VPC](/images/2.prerequisite/003-createsubnet.png)
+Hướng dẫn cài đặt AWS CLI, cấu hình tài khoản AWS, tạo repository trên Amazon ECR, và đẩy Docker image từ máy local (bao gồm cả image MySQL) lên ECR.
 
-2. At the **Create subnet** page.
-  + In the **VPC ID** section, click **Lab VPC**.
-  + In the **Subnet name** field, enter **Lab Public Subnet**.
-  + In the **Availability Zone** section, select the first Availability zone.
-  + In the field **IPv4 CIRD block** enter **10.10.1.0/24**.
+---
 
-![VPC](/images/2.prerequisite/004-createsubnet.png)
+## 🧰 1. Cài Đặt AWS CLI Trên Linux
 
-3. Scroll to the bottom of the page, click **Create subnet**.
+Chạy các lệnh sau để cài đặt AWS CLI v2:
 
-4. Click **Lab Public Subnet**.
-  + Click **Actions**.
-  + Click **Edit subnet settings**.
+```bash
+# Tải AWS CLI v2
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 
-![VPC](/images/2.prerequisite/005-createsubnet.png)
+# Giải nén
+unzip awscliv2.zip
 
-5. Click **Enable auto-assign public IPv4 address**.
-  + Click **Save**.
+# Cài đặt
+sudo ./aws/install
 
-![VPC](/images/2.prerequisite/006-createsubnet.png)
+# Kiểm tra phiên bản
+aws --version
+```
+![VPC](/images/2.prerequisite/12-30.jpg)
+![VPC](/images/2.prerequisite/12-31.jpg)
 
-6. Click **Internet Gateways**.
-  + Click **Create internet gateway**.
-  
-![VPC](/images/2.prerequisite/007-createigw.png)
+---
 
-7. At the **Create internet gateway** page.
-  + In the **Name tag** field, enter **Lab IGW**.
-  + Click **Create internet gateway**.
-  
-![VPC](/images/2.prerequisite/008-createigw.png)
+## ⚙️ 2. Cấu Hình AWS CLI
 
-8. After successful creation, click **Actions**.
-  + Click **Attach to VPC**.
- 
-![VPC](/images/2.prerequisite/009-createigw.png)
+Sau khi cài đặt, chạy lệnh sau để cấu hình thông tin tài khoản:
 
-9. At the **Attach to VPC** page.
-  + In the **Available VPCs** section, select **Lab VPC**.
-  + Click **Attach internet gateway**.
-  + Check the successful attaching process as shown below.
+```bash
+aws configure
+```
+![VPC](/images/2.prerequisite/12-33.jpg)
+![VPC](/images/2.prerequisite/12-34.jpg)
+Nhập các thông tin:
 
-![VPC](/images/2.prerequisite/010-createigw.png)
+- `AWS Access Key ID`: từ IAM user  
+- `AWS Secret Access Key`: từ IAM user  
+- `Default region name`: `ap-northeast-1` (hoặc vùng bạn sử dụng)  
+- `Default output format`: `json`
 
-10. Next we will create a custom route table to assign to **Lab Public Subnet**.
-  + Click **Route Tables**.
-  + Click **Create route table**.
+---
+![VPC](/images/2.prerequisite/12-35.jpg)
 
-![VPC](/images/2.prerequisite/011-creatertb.png)
+## 📦 3. Tạo ECR Repository Trên AWS Console
 
-11. At the **Create route table** page.
-  + In the **Name** field, enter **Lab Publicrtb**.
-  + In the **VPC** section, select **Lab VPC**.
-  + Click **Create route table**.
+1. Truy cập: [https://console.aws.amazon.com/ecr](https://console.aws.amazon.com/ecr)  
+2. Chọn **Repositories** → **Create repository**  
+3. Nhập tên repository: `webenglish`  
+4. Chọn **Private**, giữ thiết lập mặc định  
+5. Nhấn **Create repository**  
 
-12. After creating the route table successfully.
-  + Click **Edit routes**.
-  
-![VPC](/images/2.prerequisite/012-creatertb.png)
-
-13. At the **Edit routes** page.
-  + Click **Add route**.
-  + In the **Destination** field, enter 0.0.0.0/0
-  + In the **Target** section, select **Internet Gateway** and then select **Lab IGW**.
-  + Click **Save changes**.
-
-![VPC](/images/2.prerequisite/013-creatertb.png)
-
-14. Click the **Subnet associations** tab.
-  + Click **Edit subnet associations** to proceed with the associate custom route table we just created in **Lab Public Subnet**.
+![VPC](/images/2.prerequisite/12-36.jpg)
+![VPC](/images/2.prerequisite/12-37.jpg)
 
 
-![VPC](/images/2.prerequisite/014-creatertb.png)
 
-15. At the **Edit subnet associations** page.
-  + Click on **Lab Public Subnet**.
-  + Click **Save associations**.
+Bạn sẽ nhận được URI như sau:
 
-![VPC](/images/2.prerequisite/015-creatertb.png)
+```
+466322313916.dkr.ecr.ap-northeast-1.amazonaws.com/webenglish
+```
 
-16. Check that the route table information has been associated with **Lab Public Subnet** and the internet route information has been pointed to the Internet Gateway as shown below.
+---
 
-![VPC](/images/2.prerequisite/016-creatertb.png)
+## 🏗 4. Xây Dựng Docker Image Ứng Dụng
+
+Di chuyển đến thư mục có `Dockerfile` và build image:
+
+```bash
+docker build -t webenglish-app .
+```
+
+---
+
+## 🔐 5. Đăng Nhập Vào Amazon ECR
+
+Trước khi push, bạn cần đăng nhập vào ECR:
+
+```bash
+aws ecr get-login-password --region ap-northeast-1 | \
+docker login --username AWS \
+--password-stdin 466322313916.dkr.ecr.ap-northeast-1.amazonaws.com
+```
+![VPC](/images/2.prerequisite/12-38.jpg)
+
+---
+
+## 🏷 6. Tag Docker Image Với ECR URI
+
+```bash
+docker tag webenglish-app:latest \
+466322313916.dkr.ecr.ap-northeast-1.amazonaws.com/webenglish:webenglish-app
+```
+![VPC](/images/2.prerequisite/12-39.jpg)
+
+
+---
+
+## 🚀 7. Push Docker Image Lên ECR
+
+```bash
+docker push \
+466322313916.dkr.ecr.ap-northeast-1.amazonaws.com/webenglish:webenglish-app
+```
+![VPC](/images/2.prerequisite/12-40.jpg)
+
+---
+
+## 🐬 8. Đẩy Image MySQL 8.0 Lên ECR (Tuỳ chọn)
+
+Nếu bạn đã pull/build image MySQL `8.0` và image ID là `7d4e34ccfad4`, bạn có thể tag và push như sau:
+
+### ✅ Gắn tag MySQL image
+
+```bash
+docker tag 7d4e34ccfad4 \
+466322313916.dkr.ecr.ap-northeast-1.amazonaws.com/webenglish:mysql-8.0
+```
+![VPC](/images/2.prerequisite/12-41.jpg)
+
+📌 **Lưu ý**: Bạn có thể thay `mysql-8.0` bằng `latest` nếu muốn.
+
+### ✅ Push MySQL image lên ECR
+
+```bash
+docker push \
+466322313916.dkr.ecr.ap-northeast-1.amazonaws.com/webenglish:mysql-8.0
+```
+![VPC](/images/2.prerequisite/12-42.jpg)
+
+⏳ Kích thước image MySQL khoảng 772MB — quá trình push có thể mất vài phút.
+
+---
+
+## 📋 9. Kiểm Tra Trên AWS Console
+
+Sau khi push xong:
+
+- Truy cập lại AWS Console → ECR  
+- Vào repository `webenglish`  
+- Xác minh đã có các image với tag: `webenglish-app`, `mysql-8.0`, v.v.
+
+![VPC](/images/2.prerequisite/12-43.jpg)
+
+---
+
+## 📝 10. Lưu Ý Bổ Sung
+
+- Docker cần được cài đặt và chạy:
+  ```bash
+  sudo systemctl start docker
+  ```
+- Tài khoản IAM phải có quyền:
+  - `AmazonEC2ContainerRegistryFullAccess`
+- Bạn có thể sử dụng image từ ECR để triển khai container trên:
+  - EC2
+  - ECS
+  - EKS
+
+---
+
+## 📚 11. Tài Liệu Tham Khảo
+
+- [AWS CLI Install Guide](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html)  
+- [Amazon ECR Documentation](https://docs.aws.amazon.com/AmazonECR/latest/userguide/what-is-ecr.html)  
+- [Docker CLI Docs](https://docs.docker.com/engine/reference/commandline/cli/)
+
+---

@@ -6,18 +6,18 @@
 <meta name=description content>
 <meta name=author content="journeyoftheaverageguy@gmail.com">
 <link rel=icon href=../images/favicon.png type=image/png>
-<title>Port Forwarding :: AWS System Manager</title>
-<link href=../css/nucleus.css?1754928610 rel=stylesheet>
-<link href=../css/fontawesome-all.min.css?1754928610 rel=stylesheet>
-<link href=../css/hybrid.css?1754928610 rel=stylesheet>
-<link href=../css/featherlight.min.css?1754928610 rel=stylesheet>
-<link href=../css/perfect-scrollbar.min.css?1754928610 rel=stylesheet>
-<link href=../css/auto-complete.css?1754928610 rel=stylesheet>
-<link href=../css/atom-one-dark-reasonable.css?1754928610 rel=stylesheet>
-<link href=../css/theme.css?1754928610 rel=stylesheet>
-<link href=../css/hugo-theme.css?1754928610 rel=stylesheet>
-<link href=../css/theme-workshop.css?1754928610 rel=stylesheet>
-<script src=../js/jquery-3.3.1.min.js?1754928610></script>
+<title>Automated Response :: AWS System Manager</title>
+<link href=../css/nucleus.css?1754929052 rel=stylesheet>
+<link href=../css/fontawesome-all.min.css?1754929052 rel=stylesheet>
+<link href=../css/hybrid.css?1754929052 rel=stylesheet>
+<link href=../css/featherlight.min.css?1754929052 rel=stylesheet>
+<link href=../css/perfect-scrollbar.min.css?1754929052 rel=stylesheet>
+<link href=../css/auto-complete.css?1754929052 rel=stylesheet>
+<link href=../css/atom-one-dark-reasonable.css?1754929052 rel=stylesheet>
+<link href=../css/theme.css?1754929052 rel=stylesheet>
+<link href=../css/hugo-theme.css?1754929052 rel=stylesheet>
+<link href=../css/theme-workshop.css?1754929052 rel=stylesheet>
+<script src=../js/jquery-3.3.1.min.js?1754929052></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
 </head>
 <body data-url=../5-java-sdk/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=../js/lunr.min.js?1754928610></script>
-<script type=text/javascript src=../js/auto-complete.js?1754928610></script>
+<script type=text/javascript src=../js/lunr.min.js?1754929052></script>
+<script type=text/javascript src=../js/auto-complete.js?1754929052></script>
 <script type=text/javascript>var baseurl="https://QuocTrong21.github.io/FCJ-Workshop/"</script>
-<script type=text/javascript src=../js/search.js?1754928610></script>
+<script type=text/javascript src=../js/search.js?1754929052></script>
 </div>
 <div class=highlightable>
 <ul class=topics>
@@ -57,9 +57,9 @@
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
-<li data-nav-id=/2-prerequiste/2.1.2-createec2/ title="Create Public Subnet" class=dd-item>
+<li data-nav-id=/2-prerequiste/2.1.2-createec2/ title="Triển Khai Docker Image Lên AWS ECR Trên Linux " class=dd-item>
 <a href=../2-prerequiste/2.1.2-createec2/>
-<b> 2.1.2 </b> Create Public Subnet
+<b> 2.1.2 </b> Triển Khai Docker Image Lên AWS ECR Trên Linux
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
@@ -71,17 +71,17 @@
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
-<li data-nav-id=/4-cloudformation/ title="Manage session logs" class=dd-item>
+<li data-nav-id=/4-cloudformation/ title="Triển khai Tính năng Cảnh Báo và Phản Hồi Tự Động cho WebEnglish" class=dd-item>
 <a href=../4-cloudformation/>
-<b> 4. </b> Manage session logs
+<b> 4. </b> Triển khai Tính năng Cảnh Báo và Phản Hồi Tự Động cho WebEnglish
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
-<li data-nav-id=/5-java-sdk/ title="Port Forwarding" class="dd-item
+<li data-nav-id=/5-java-sdk/ title="Automated Response" class="dd-item
 parent
 active">
 <a href=../5-java-sdk/>
-<b> 5. </b> Port Forwarding
+<b> 5. </b> Automated Response
 <i class="fas fa-check read-icon"></i>
 </a>
 </li>
@@ -153,18 +153,35 @@ active">
 </span>
 <span id=toc-menu><i class="fas fa-list-alt"></i></span>
 <span class=links>
-<a href=../>Session Management</a> > Port Forwarding
+<a href=../>Session Management</a> > Automated Response
 </span>
 </div>
 <div class=progress>
 <div class=wrapper>
 <nav id=TableOfContents>
 <ul>
-<li>
+<li><a href=#-1-thiết-kế-quy-trình-cảnh-báo-3-cấp>📌 1. Thiết Kế Quy Trình Cảnh Báo 3 Cấp</a></li>
+<li><a href=#-2-tạo-sns-topic-và-subscriptions>🧪 2. Tạo SNS Topic và Subscriptions</a>
 <ul>
-<li></li>
+<li><a href=#21-tạo-các-sns-topic>2.1 Tạo các SNS Topic</a></li>
+<li><a href=#22-đăng-ký-email-vào-topic-phải-xác-nhận>2.2 Đăng ký Email vào Topic (phải xác nhận)</a></li>
 </ul>
 </li>
+<li><a href=#-3-tạo-cloudwatch-alarm---level-1>📈 3. Tạo CloudWatch Alarm - Level 1</a></li>
+<li><a href=#-4-lambda-leo-thang>🛠 4. Lambda Leo Thang</a>
+<ul>
+<li><a href=#41-tạo-iam-role-cho-lambda>4.1 Tạo IAM Role cho Lambda</a></li>
+<li><a href=#42-mã-lambda-alert_escalatorpy>4.2 Mã Lambda: <code>alert_escalator.py</code></a></li>
+<li><a href=#43-deploy-lambda-function>4.3 Deploy Lambda Function</a></li>
+</ul>
+</li>
+<li><a href=#-5-tạo-alarm-gọi-lambda---level-2>📈 5. Tạo Alarm Gọi Lambda - Level 2</a></li>
+<li><a href=#-tổng-quan-leo-thang>🔁 Tổng Quan Leo Thang</a></li>
+<li><a href=#-6-cloudwatch-anomaly-detection-tùy-chọn-nâng-cao>📊 6. CloudWatch Anomaly Detection (Tùy chọn nâng cao)</a></li>
+<li><a href=#-7-step-functions-tùy-chọn-tự-động-phản-hồi>🌀 7. Step Functions (Tùy chọn tự động phản hồi)</a></li>
+<li><a href=#-8-kiểm-thử-hệ-thống>🧪 8. Kiểm thử hệ thống</a></li>
+<li><a href=#-9-tổng-kết>📘 9. Tổng Kết</a></li>
+<li><a href=#-gợi-ý-nâng-cao>🧩 Gợi ý nâng cao</a></li>
 </ul>
 </nav>
 </div>
@@ -175,109 +192,266 @@ active">
 </div>
 <div id=body-inner>
 <h1>
-Port Forwarding
+Automated Response
 </h1>
-<div class="notices info"><p><strong>Port Forwarding</strong> is a useful way to redirect network traffic from one IP address - Port to another IP address - Port. With <strong>Port Forwarding</strong> we can access an EC2 instance located in the private subnet from our workstation.</p>
-</div>
-<p>We will configure <strong>Port Forwarding</strong> for the RDP connection between our machine and <strong>Private Windows Instance</strong> located in the private subnet we created for this exercise.</p>
-<p><img src=../images/arc-04.png alt=port-fwd></p>
-<h4 id=create-iam-user-with-permission-to-connect-ssm>Create IAM user with permission to connect SSM</h4>
-<ol>
-<li>Go to <a href=https://console.aws.amazon.com/iamv2/home>IAM service management console</a>
+<hr>
+<hr>
+<h1 id=-triển-khai-hệ-thống-cảnh-báo--leo-thang-sự-cố-chuyên-nghiệp>🚨 Triển Khai Hệ Thống Cảnh Báo & Leo Thang Sự Cố Chuyên Nghiệp</h1>
+<blockquote>
+<p><strong>Mục tiêu</strong>: Hệ thống cảnh báo đa cấp, tự động phát hiện bất thường, gửi cảnh báo đến đúng người, và tự phản hồi nếu cần.</p>
+</blockquote>
+<hr>
+<h2 id=-1-thiết-kế-quy-trình-cảnh-báo-3-cấp>📌 1. Thiết Kế Quy Trình Cảnh Báo 3 Cấp</h2>
+<table>
+<thead>
+<tr>
+<th>Cấp</th>
+<th>Tên</th>
+<th>Người nhận</th>
+<th>Thời gian phản hồi</th>
+<th>Công cụ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Cảnh báo kỹ thuật (DevOps)</td>
+<td>Nhóm DevOps</td>
+<td>≤ 15 phút</td>
+<td>Email / SNS</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Cảnh báo gấp (On-call)</td>
+<td>Dev trực hotline</td>
+<td>≤ 5 phút</td>
+<td>SNS + Lambda</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Cảnh báo quản lý (Manager)</td>
+<td>Quản lý cấp cao</td>
+<td>Trong giờ hành chính</td>
+<td>Email / SMS</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id=-2-tạo-sns-topic-và-subscriptions>🧪 2. Tạo SNS Topic và Subscriptions</h2>
+<h3 id=21-tạo-các-sns-topic>2.1 Tạo các SNS Topic</h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>aws sns create-topic --name WebEnglishAlert-Level1
+aws sns create-topic --name WebEnglishAlert-Level2
+aws sns create-topic --name WebEnglishAlert-Level3
+</code></pre></div><p><img src=../images/5.fwd/1.jpg alt=FWD></p>
+<h3 id=22-đăng-ký-email-vào-topic-phải-xác-nhận>2.2 Đăng ký Email vào Topic (phải xác nhận)</h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>aws sns subscribe <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --topic-arn arn:aws:sns:ap-northeast-1:&lt;ACCOUNT_ID&gt;:WebEnglishAlert-Level1 <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --protocol email <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --notification-endpoint devops@example.com
+
+aws sns subscribe <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --topic-arn arn:aws:sns:ap-northeast-1:&lt;ACCOUNT_ID&gt;:WebEnglishAlert-Level3 <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --protocol email <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --notification-endpoint ceo@example.com
+</code></pre></div><p><img src=../images/5.fwd/2.jpg alt=FWD></p>
+<blockquote>
+<p>✅ <strong>Kiểm tra email để xác nhận (Confirm Subscription)</strong>.
+<img src=../images/5.fwd/3.jpg alt=FWD>
+<img src=../images/5.fwd/4.jpg alt=FWD></p>
+</blockquote>
+<hr>
+<h2 id=-3-tạo-cloudwatch-alarm---level-1>📈 3. Tạo CloudWatch Alarm - Level 1</h2>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>aws cloudwatch put-metric-alarm <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --alarm-name CPU-High-Level1 <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --alarm-description <span style=color:#e6db74>&#34;Cảnh báo CPU cao - cấp 1&#34;</span> <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --metric-name cpu_usage_active <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --namespace WebEnglishMetrics <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --statistic Average <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --period <span style=color:#ae81ff>300</span> <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --evaluation-periods <span style=color:#ae81ff>1</span> <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --threshold <span style=color:#ae81ff>80</span> <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --comparison-operator GreaterThanThreshold <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --actions-enabled <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --alarm-actions arn:aws:sns:ap-northeast-1:&lt;ACCOUNT_ID&gt;:WebEnglishAlert-Level1
+</code></pre></div><p><img src=../images/5.fwd/6.jpg alt=FWD></p>
+<hr>
+<h2 id=-4-lambda-leo-thang>🛠 4. Lambda Leo Thang</h2>
+<h3 id=41-tạo-iam-role-cho-lambda>4.1 Tạo IAM Role cho Lambda</h3>
+<p><strong>trust-policy.json</strong></p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;Version&#34;</span>: <span style=color:#e6db74>&#34;2012-10-17&#34;</span>,
+  <span style=color:#f92672>&#34;Statement&#34;</span>: [{
+    <span style=color:#f92672>&#34;Effect&#34;</span>: <span style=color:#e6db74>&#34;Allow&#34;</span>,
+    <span style=color:#f92672>&#34;Principal&#34;</span>: { <span style=color:#f92672>&#34;Service&#34;</span>: <span style=color:#e6db74>&#34;lambda.amazonaws.com&#34;</span> },
+    <span style=color:#f92672>&#34;Action&#34;</span>: <span style=color:#e6db74>&#34;sts:AssumeRole&#34;</span>
+  }]
+}
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>aws iam create-role <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --role-name LambdaAlertEscalatorRole <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --assume-role-policy-document file://trust-policy.json
+
+aws iam attach-role-policy <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --role-name LambdaAlertEscalatorRole <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --policy-arn arn:aws:iam::aws:policy/CloudWatchReadOnlyAccess
+
+aws iam attach-role-policy <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --role-name LambdaAlertEscalatorRole <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --policy-arn arn:aws:iam::aws:policy/AmazonSNSFullAccess
+</code></pre></div><p><img src=../images/5.fwd/7.jpg alt=FWD>
+<img src=../images/5.fwd/8.jpg alt=FWD></p>
+<hr>
+<h3 id=42-mã-lambda-alert_escalatorpy>4.2 Mã Lambda: <code>alert_escalator.py</code></h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> boto3
+
+<span style=color:#66d9ef>def</span> <span style=color:#a6e22e>lambda_handler</span>(event, context):
+    cloudwatch <span style=color:#f92672>=</span> boto3<span style=color:#f92672>.</span>client(<span style=color:#e6db74>&#39;cloudwatch&#39;</span>)
+    sns <span style=color:#f92672>=</span> boto3<span style=color:#f92672>.</span>client(<span style=color:#e6db74>&#39;sns&#39;</span>)
+
+    alarm_name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;CPU-High-Level1&#34;</span>
+    response <span style=color:#f92672>=</span> cloudwatch<span style=color:#f92672>.</span>describe_alarms(AlarmNames<span style=color:#f92672>=</span>[alarm_name])
+
+    <span style=color:#66d9ef>if</span> response[<span style=color:#e6db74>&#39;MetricAlarms&#39;</span>] <span style=color:#f92672>and</span> response[<span style=color:#e6db74>&#39;MetricAlarms&#39;</span>][<span style=color:#ae81ff>0</span>][<span style=color:#e6db74>&#39;StateValue&#39;</span>] <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;ALARM&#34;</span>:
+        sns<span style=color:#f92672>.</span>publish(
+            TopicArn<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;arn:aws:sns:ap-northeast-1:&lt;ACCOUNT_ID&gt;:WebEnglishAlert-Level2&#34;</span>,
+            Subject<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;🚨 Cảnh báo leo thang&#34;</span>,
+            Message<span style=color:#f92672>=</span><span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Alarm </span><span style=color:#e6db74>{</span>alarm_name<span style=color:#e6db74>}</span><span style=color:#e6db74> vẫn chưa được xử lý. Đang leo thang lên cấp 2.&#34;</span>
+        )
+</code></pre></div><hr>
+<h3 id=43-deploy-lambda-function>4.3 Deploy Lambda Function</h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>zip <span style=color:#66d9ef>function</span>.zip alert_escalator.py
+
+aws lambda create-function <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --function-name alertEscalator <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --runtime python3.12 <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --role arn:aws:iam::&lt;ACCOUNT_ID&gt;:role/LambdaAlertEscalatorRole <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --handler alert_escalator.lambda_handler <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --zip-file fileb://function.zip <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --timeout <span style=color:#ae81ff>10</span>
+</code></pre></div><blockquote>
+<p>✅ Bạn có thể test thử bằng AWS Console → Lambda → Test
+<img src=../images/5.fwd/7.jpg alt=FWD></p>
+</blockquote>
+<hr>
+<h2 id=-5-tạo-alarm-gọi-lambda---level-2>📈 5. Tạo Alarm Gọi Lambda - Level 2</h2>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>aws cloudwatch put-metric-alarm <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --alarm-name CPU-High-Level2 <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --alarm-description <span style=color:#e6db74>&#34;Leo thang cảnh báo CPU cao&#34;</span> <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --metric-name cpu_usage_active <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --namespace WebEnglishMetrics <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --statistic Average <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --period <span style=color:#ae81ff>600</span> <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --evaluation-periods <span style=color:#ae81ff>2</span> <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --threshold <span style=color:#ae81ff>80</span> <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --comparison-operator GreaterThanThreshold <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --actions-enabled <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --alarm-actions arn:aws:lambda:ap-northeast-1:&lt;ACCOUNT_ID&gt;:function:alertEscalator
+</code></pre></div><hr>
+<h2 id=-tổng-quan-leo-thang>🔁 Tổng Quan Leo Thang</h2>
+<table>
+<thead>
+<tr>
+<th>Cấp</th>
+<th>Alarm</th>
+<th>Điều kiện</th>
+<th>Hành động</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>CPU-High-Level1</td>
+<td>1 × 5 phút > 80%</td>
+<td>Gửi SNS Level 1 → DevOps</td>
+</tr>
+<tr>
+<td>2</td>
+<td>CPU-High-Level2</td>
+<td>2 × 10 phút > 80%</td>
+<td>Gọi Lambda → gửi SNS Level 2 (gọi người trực hotline)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>(tùy chọn mở rộng)</td>
+<td>Không xử lý sau 30p</td>
+<td>Gửi SNS Level 3 → quản lý cấp cao qua email/sms</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id=-6-cloudwatch-anomaly-detection-tùy-chọn-nâng-cao>📊 6. CloudWatch Anomaly Detection (Tùy chọn nâng cao)</h2>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>aws cloudwatch put-anomaly-detector <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --namespace WebEnglishMetrics <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --metric-name cpu_usage_active <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --statistic Average <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --dimensions Name<span style=color:#f92672>=</span>InstanceId,Value<span style=color:#f92672>=</span>i-xxxxxx
+</code></pre></div><p><img src=../images/5.fwd/8.jpg alt=FWD></p>
+<hr>
+<h2 id=-7-step-functions-tùy-chọn-tự-động-phản-hồi>🌀 7. Step Functions (Tùy chọn tự động phản hồi)</h2>
+<p>Sử dụng để:</p>
 <ul>
-<li>Click <strong>Users</strong> , then click <strong>Add users</strong>.</li>
+<li>Scale ECS Service</li>
+<li>Reboot EC2 Instance</li>
+<li>Gửi chuỗi hành động khi phát hiện sự cố</li>
 </ul>
-</li>
-</ol>
-<p><img src=../images/5.fwd/001-fwd.png alt=FWD></p>
-<ol start=2>
-<li>At the <strong>Add user</strong> page.
+<hr>
+<h2 id=-8-kiểm-thử-hệ-thống>🧪 8. Kiểm thử hệ thống</h2>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo yum install -y stress-ng
+stress-ng --cpu <span style=color:#ae81ff>4</span> --timeout 600s
+</code></pre></div><p>Bạn có thể gửi metric giả vào CloudWatch để test hệ thống hoạt động:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>aws cloudwatch put-metric-data <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --metric-name cpu_usage_active <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --namespace WebEnglishMetrics <span style=color:#ae81ff>\
+</span><span style=color:#ae81ff></span>  --value <span style=color:#ae81ff>90</span>
+</code></pre></div><p>Kiểm tra:</p>
 <ul>
-<li>In the <strong>User name</strong> field, enter <strong>Portfwd</strong>.</li>
-<li>Click on <strong>Access key - Programmatic access</strong>.</li>
-<li>Click <strong>Next: Permissions</strong>.</li>
+<li>SNS gửi đúng người?</li>
+<li>Lambda có được kích hoạt?</li>
+<li>Escalation có được thực hiện?</li>
+<li>Email xác nhận đã được nhấn chưa?</li>
 </ul>
-</li>
-</ol>
-<p><img src=../images/5.fwd/002-fwd.png alt=FWD></p>
-<ol start=3>
-<li>
-<p>Click <strong>Attach existing policies directly</strong>.</p>
+<hr>
+<h2 id=-9-tổng-kết>📘 9. Tổng Kết</h2>
+<p>✅ Hệ thống cảnh báo nhiều cấp hoạt động chuẩn:</p>
 <ul>
-<li>In the search box, enter <strong>ssm</strong>.</li>
-<li>Click on <strong>AmazonSSMFullAccess</strong>.</li>
-<li>Click <strong>Next: Tags</strong>, click <strong>Next: Reviews</strong>.</li>
-<li>Click <strong>Create user</strong>.</li>
+<li>CloudWatch theo dõi & phát hiện bất thường</li>
+<li>SNS phân tầng cảnh báo đúng người</li>
+<li>Lambda phản ứng khi cảnh báo chưa được xử lý</li>
+<li>Mở rộng với Step Functions, PagerDuty, EC2 auto recovery&mldr;
+<img src=../images/5.fwd/9.jpg alt=FWD>
+<img src=../images/5.fwd/10.jpg alt=FWD></li>
 </ul>
-</li>
-<li>
-<p>Save <strong>Access key ID</strong> and <strong>Secret access key</strong> information to perform AWS CLI configuration.</p>
-</li>
-</ol>
-<h4 id=install-and-configure-aws-cli-and-session-manager-plugin>Install and Configure AWS CLI and Session Manager Plugin</h4>
-<p>To perform this hands-on, make sure your workstation has <a href>AWS CLI</a> and <a href=https://docs.aws.amazon.com/systems-manager/latest/userguide/session>Session Manager Plugin</a> installed -manager-working-with-install-plugin.html)</p>
-<p>More hands-on tutorials on installing and configuring the AWS CLI can be found <a href=https://000011.awsstudygroup.com/>here</a>.</p>
-<div class="notices tip"><p>With Windows, when extracting the <strong>Session Manager Plugin</strong> installation folder, run the <strong>install.bat</strong> file with Administrator permission to perform the installation.</p>
-</div>
-<h4 id=implement-portforwarding>Implement Portforwarding</h4>
-<ol>
-<li>Run the command below in <strong>Command Prompt</strong> on your machine to configure <strong>Port Forwarding</strong>.</li>
-</ol>
-<pre tabindex=0><code>   aws ssm start-session --target (your ID windows instance) --document-name AWS-StartPortForwardingSession --parameters portNumber=&quot;3389&quot;,localPortNumber=&quot;9999&quot; --region (your region)
-</code></pre>
-<div class="notices tip"><p><strong>Windows Private Instance</strong> <strong>Instance ID</strong> information can be found when you view the EC2 Windows Private Instance server details.</p>
-</div>
+<hr>
+<h2 id=-gợi-ý-nâng-cao>🧩 Gợi ý nâng cao</h2>
 <ul>
-<li>Example command:</li>
+<li>Dùng <strong>CloudFormation / CDK</strong> để mã hóa toàn bộ hạ tầng này</li>
+<li>Ghi log vào <strong>CloudWatch Logs</strong> để tracking escalation</li>
+<li>Tạo <strong>Dead Letter Queue</strong> cho Lambda nếu bị lỗi</li>
 </ul>
-<pre tabindex=0><code>C:\Windows\system32&gt;aws ssm start-session --target i-06343d7377486760c --document-name AWS-StartPortForwardingSession --parameters portNumber=&quot;3389&quot;,localPortNumber=&quot;9999&quot; --region ap-southeast-1
-</code></pre>
-<div class="notices warning"><p>If your command gives an error like below: <br>
-SessionManagerPlugin is not found. Please refer to SessionManager Documentation here: <a href=http://docs.aws.amazon.com/console/systems-manager/session-manager-plugin-not-found>http://docs.aws.amazon.com/console/systems-manager/session-manager-plugin-not-found</a><br>
-Prove that you have not successfully installed the Session Manager Plugin. You may need to relaunch <strong>Command Prompt</strong> after installing <strong>Session Manager Plugin</strong>.</p>
-</div>
-<ol start=2>
-<li>Connect to the <strong>Private Windows Instance</strong> you created using the <strong>Remote Desktop</strong> tool on your workstation.
-<ul>
-<li>In the Computer section: enter <strong>localhost:9999</strong>.</li>
-</ul>
-</li>
-</ol>
-<p><img src=../images/5.fwd/003-fwd.png alt=FWD></p>
-<ol start=3>
-<li>Return to the administration interface of the System Manager - Session Manager service.
-<ul>
-<li>Click tab <strong>Session history</strong>.</li>
-<li>We will see session logs with Document name <strong>AWS-StartPortForwardingSession</strong>.</li>
-</ul>
-</li>
-</ol>
-<p><img src=../images/5.fwd/004-fwd.png alt=FWD></p>
-<p>Congratulations on completing the lab on how to use Session Manager to connect and store session logs in S3 bucket. Remember to perform resource cleanup to avoid unintended costs.</p>
+<hr>
 <footer class=footline>
 </footer>
 </div>
 </div>
 <div id=navigation>
-<a class="nav nav-prev" href=../4-cloudformation/ title="Manage session logs"> <i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-prev" href=../4-cloudformation/ title="Triển khai Tính năng Cảnh Báo và Phản Hồi Tự Động cho WebEnglish"> <i class="fa fa-chevron-left"></i></a>
 <a class="nav nav-next" href=../6-cleanup/ title="Clean Up Resources" style=margin-right:0><i class="fa fa-chevron-right"></i></a>
 </div>
 </section>
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=../js/clipboard.min.js?1754928610></script>
-<script src=../js/perfect-scrollbar.min.js?1754928610></script>
-<script src=../js/perfect-scrollbar.jquery.min.js?1754928610></script>
-<script src=../js/jquery.sticky.js?1754928610></script>
-<script src=../js/featherlight.min.js?1754928610></script>
-<script src=../js/highlight.pack.js?1754928610></script>
+<script src=../js/clipboard.min.js?1754929052></script>
+<script src=../js/perfect-scrollbar.min.js?1754929052></script>
+<script src=../js/perfect-scrollbar.jquery.min.js?1754929052></script>
+<script src=../js/jquery.sticky.js?1754929052></script>
+<script src=../js/featherlight.min.js?1754929052></script>
+<script src=../js/highlight.pack.js?1754929052></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=../js/modernizr.custom-3.6.0.js?1754928610></script>
-<script src=../js/learn.js?1754928610></script>
-<script src=../js/hugo-learn.js?1754928610></script>
-<link href=../mermaid/mermaid.css?1754928610 rel=stylesheet>
-<script src=../mermaid/mermaid.js?1754928610></script>
+<script src=../js/modernizr.custom-3.6.0.js?1754929052></script>
+<script src=../js/learn.js?1754929052></script>
+<script src=../js/hugo-learn.js?1754929052></script>
+<link href=../mermaid/mermaid.css?1754929052 rel=stylesheet>
+<script src=../mermaid/mermaid.js?1754929052></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 <script>(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-158079754-2','auto'),ga('send','pageview')</script>
 </body>

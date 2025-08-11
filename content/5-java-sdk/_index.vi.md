@@ -8,14 +8,14 @@ pre: " <b> 5. </b> "
 
 ## 5. Sử dụng AWS SDK for Java
 
-### 4.1. Mục tiêu
+### 5.1. Mục tiêu
 
 - Viết mã Java để tự động điều khiển các tài nguyên AWS như tạo Security Group, thiết lập CloudWatch Alarm, và gửi thông báo SNS.  
 - Tăng cường tự động hóa và giám sát hệ thống AWS bằng ứng dụng Java.
 
 ---
 
-### 4.2. Cấu trúc Project
+### 5.2. Cấu trúc Project
 
 - Tạo project Maven sử dụng AWS SDK for Java (phiên bản 2.x).  
 - Thêm các dependency cần thiết bao gồm:  
@@ -25,7 +25,7 @@ pre: " <b> 5. </b> "
 
 ---
 
-### 4.3. Các bước thực hiện
+### 5.3. Các bước thực hiện
 
 1. **Setup project và AWS SDK**  
    ### Khởi tạo Maven project. 
@@ -197,7 +197,7 @@ pre: " <b> 5. </b> "
       java -cp target/aws-networking-1.0.jar com.movie.aws.NetworkAutomationAllInOne
    ```
    - Khi chạy, bạn nhập:
-   
+
     VPC ID (vd: vpc-0a1b2c3d4e5f6g7h)
 
     EC2 Instance ID để gắn alarm  
@@ -234,4 +234,3 @@ pre: " <b> 5. </b> "
 
 ---
 
-Bạn có muốn hỗ trợ thêm về cách tổ chức project hoặc các best practices khi sử dụng AWS SDK for Java không?

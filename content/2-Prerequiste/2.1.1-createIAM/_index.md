@@ -14,7 +14,7 @@ Tạo một EC2 instance sử dụng cấu hình mặc định để triển kha
 - Tài khoản AWS hợp lệ
 - Đăng nhập AWS Console hoặc cài sẵn AWS CLI
 - Tạo key pair để SSH (nếu cần)
-
+c
 ## 🛠️ Các Bước Thực Hiện
 
 ### 1. Đăng Nhập AWS Console
